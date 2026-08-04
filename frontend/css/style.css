@@ -126,14 +126,16 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; lett
 .hero-stat b { font-family: var(--font-display); font-size: 22px; display: block; color: var(--brass-bright); }
 .hero-stat span { font-size: 12px; color: var(--ink-faint); }
 
-/* ---------- Hero Visual & Tag ---------- */
+/* ---------- Hero Visual & Tag (Fixed Fit) ---------- */
 .hero-visual {
     position: relative;
-    height: 520px;
-    border-radius: 18px;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
     overflow: hidden;
-    background: #111;
-    box-shadow: 0 25px 60px rgba(0,0,0,.35);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .hero-image {
@@ -141,37 +143,40 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; lett
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: .5s;
+    transition: transform 0.5s ease;
 }
 
 .hero-visual:hover .hero-image {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .hero-visual::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to left,
-        rgba(0,0,0,.1),
-        rgba(0,0,0,.2),
-        rgba(0,0,0,.45));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
+    pointer-events: none;
 }
 
 .tag-demo {
     position: absolute;
-    left: 20px;
-    bottom: 20px;
+    left: 16px;
+    bottom: 16px;
     z-index: 2;
 }
 
 .swatch-tag {
-    background: #111;
-    color: #d4a15a;
-    padding: 8px 14px;
-    border-radius: 8px;
+    background: var(--pine);
+    color: #EAF3EF;
+    font-family: var(--font-mono);
+    font-size: 11px;
     font-weight: 600;
-    border: 1px solid rgba(255,255,255,.15);
+    letter-spacing: .04em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: inline-block;
 }
 
 /* ---------- Sections ---------- */
