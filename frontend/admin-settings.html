@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Settings — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a></div>
+    <div class="nav-actions"><span id="nav-auth-slot"></span></div>
+  </div>
+</nav>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <span class="eyebrow">Admin Panel</span>
+    <a href="admin-dashboard.html" data-page="dashboard">Dashboard</a>
+    <a href="admin-products.html" data-page="products">Products</a>
+    <a href="admin-categories.html" data-page="categories">Categories</a>
+    <a href="admin-orders.html" data-page="orders">Orders</a>
+    <a href="admin-customers.html" data-page="customers">Customers</a>
+    <a href="admin-settings.html" data-page="settings">Settings</a>
+    <div class="admin-back"><a href="index.html">← Back to store</a></div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-head">
+      <div>
+        <h2>Website Settings</h2>
+        <p>Store-wide details — change these any time without touching code.</p>
+      </div>
+    </div>
+
+    <div class="admin-panel-block" style="max-width:520px">
+      <h3>Contact & WhatsApp</h3>
+      <div class="form-msg" id="settings-msg"></div>
+      <form id="settings-form">
+        <div class="field">
+          <label for="s_whatsapp">WhatsApp number</label>
+          <input id="s_whatsapp" type="text" placeholder="e.g. 923001234567 (country code, no +/spaces)">
+        </div>
+        <div class="field"><label for="s_email">Contact email</label><input id="s_email" type="email"></div>
+        <div class="field"><label for="s_phone">Contact phone</label><input id="s_phone" type="tel"></div>
+        <div class="field"><label for="s_address">Contact address</label><input id="s_address" type="text"></div>
+        <button type="submit" class="btn btn-primary btn-block" id="settings-save-btn">Save Settings</button>
+      </form>
+    </div>
+
+    <div class="admin-panel-block" style="max-width:520px">
+      <h3>Change Your Password</h3>
+      <div class="form-msg" id="password-msg"></div>
+      <form id="password-form">
+        <div class="field"><label for="s_new_password">New password</label><input id="s_new_password" type="password" required minlength="8"></div>
+        <div class="field"><label for="s_confirm_password">Confirm new password</label><input id="s_confirm_password" type="password" required minlength="8"></div>
+        <button type="submit" class="btn btn-outline btn-block" id="password-save-btn">Update Password</button>
+      </form>
+    </div>
+
+    <div class="admin-panel-block">
+      <h3>Contact Messages</h3>
+      <div id="messages-list">Loading…</div>
+    </div>
+  </main>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin-common.js"></script>
+<script src="js/admin-settings.js"></script>
+</body>
+</html>

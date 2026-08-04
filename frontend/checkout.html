@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"></div>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">Cart<span class="cart-count" id="cart-count">0</span></a>
+      <span id="nav-auth-slot"></span>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="section-head" style="padding-top:32px"><h2>Checkout</h2></div>
+  <form id="checkout-form" class="checkout-layout">
+    <div class="checkout-main">
+      <div class="checkout-block">
+        <h3>Shipping Address</h3>
+        <div id="address-list">Loading…</div>
+        <div id="new-address-fields" style="display:none;margin-top:16px">
+          <div class="field-row">
+            <div class="field"><label for="na_full_name">Full name</label><input id="na_full_name" type="text"></div>
+            <div class="field"><label for="na_phone">Phone</label><input id="na_phone" type="tel"></div>
+          </div>
+          <div class="field"><label for="na_line1">Address line 1</label><input id="na_line1" type="text"></div>
+          <div class="field"><label for="na_line2">Address line 2 (optional)</label><input id="na_line2" type="text"></div>
+          <div class="field-row">
+            <div class="field"><label for="na_city">City</label><input id="na_city" type="text"></div>
+            <div class="field"><label for="na_state">State/Province</label><input id="na_state" type="text"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="na_postal">Postal code</label><input id="na_postal" type="text"></div>
+            <div class="field"><label for="na_country">Country</label><input id="na_country" type="text" value="Pakistan"></div>
+          </div>
+          <label class="filter-opt" id="save-address-toggle">
+            <input type="checkbox" id="save-address-checkbox" checked> Save this address to my account
+          </label>
+        </div>
+      </div>
+
+      <div class="checkout-block">
+        <h3>Payment Method</h3>
+        <label class="address-opt"><input type="radio" name="payment" value="cod" checked><span><b>Cash on Delivery</b><br>Pay when your order arrives.</span></label>
+        <label class="address-opt"><input type="radio" name="payment" value="bank_transfer"><span><b>Bank Transfer</b><br>Transfer details sent after order confirmation.</span></label>
+      </div>
+    </div>
+
+    <aside class="cart-summary-card">
+      <h3 style="margin-bottom:14px">Order Review</h3>
+      <div id="checkout-items">Loading…</div>
+      <div class="form-msg" id="checkout-msg"></div>
+      <button type="submit" class="btn btn-primary btn-block" id="place-order-btn">Place Order</button>
+    </aside>
+  </form>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 ZAVQEN Wholesale. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

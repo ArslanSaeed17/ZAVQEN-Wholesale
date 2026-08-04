@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Categories — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a></div>
+    <div class="nav-actions"><span id="nav-auth-slot"></span></div>
+  </div>
+</nav>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <span class="eyebrow">Admin Panel</span>
+    <a href="admin-dashboard.html" data-page="dashboard">Dashboard</a>
+    <a href="admin-products.html" data-page="products">Products</a>
+    <a href="admin-categories.html" data-page="categories">Categories</a>
+    <a href="admin-orders.html" data-page="orders">Orders</a>
+    <a href="admin-customers.html" data-page="customers">Customers</a>
+    <a href="admin-settings.html" data-page="settings">Settings</a>
+    <div class="admin-back"><a href="index.html">← Back to store</a></div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-head">
+      <div>
+        <h2>Categories</h2>
+        <p>Organize how products are grouped across the store.</p>
+      </div>
+      <button class="btn btn-primary" id="add-category-btn">+ Add Category</button>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th></th><th>Name</th><th>Slug</th><th>Products</th><th></th></tr></thead>
+        <tbody id="categories-tbody"><tr><td colspan="5">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- Add / Edit Category Modal -->
+<div class="modal-overlay" id="category-modal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="category-modal-title">Add Category</h3>
+      <button class="modal-close" id="category-modal-close">✕</button>
+    </div>
+    <div class="form-msg" id="category-form-msg"></div>
+    <form id="category-form">
+      <input type="hidden" id="c_id">
+      <div class="field"><label for="c_name">Category name</label><input id="c_name" type="text" required></div>
+      <div class="field"><label for="c_slug">URL slug</label><input id="c_slug" type="text" required></div>
+      <div class="field"><label for="c_description">Description</label><textarea id="c_description" rows="2"></textarea></div>
+      <div class="field">
+        <label>Image</label>
+        <label class="img-upload-zone" for="c_image_input">Click to upload (JPG/PNG/WEBP/GIF, max 5MB)</label>
+        <input type="file" id="c_image_input" accept="image/*" style="display:none">
+        <div class="img-preview-row" id="c_image_preview"></div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="category-save-btn">Save Category</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin-common.js"></script>
+<script src="js/admin-categories.js"></script>
+</body>
+</html>

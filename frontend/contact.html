@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — ZAVQEN Wholesale</title>
+<meta name="description" content="Get in touch with ZAVQEN Wholesale for bulk orders, product questions, or support.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="products.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <form class="nav-search" id="nav-search-form">
+      <input type="search" id="nav-search-input" placeholder="Search wholesale products…">
+    </form>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">Cart<span class="cart-count" id="cart-count">0</span></a>
+      <span id="nav-auth-slot"></span>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="section-head" style="padding-top:40px">
+    <div>
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Us</h2>
+    </div>
+  </div>
+
+  <div class="contact-layout">
+    <div>
+      <div class="contact-info-card">
+        <span class="eyebrow">Email</span>
+        <a href="#" data-contact-email>Loading…</a>
+      </div>
+      <div class="contact-info-card">
+        <span class="eyebrow">Phone</span>
+        <a href="#" data-contact-phone>Loading…</a>
+      </div>
+      <div class="contact-info-card">
+        <span class="eyebrow">Address</span>
+        <p data-contact-address>Lahore, Pakistan</p>
+      </div>
+      <div class="contact-info-card">
+        <span class="eyebrow">WhatsApp</span>
+        <p style="margin:0 0 10px">Fastest way to reach us for bulk order questions.</p>
+        <a href="#" data-whatsapp-link target="_blank" rel="noopener" class="whatsapp-btn" style="display:none">Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="checkout-block">
+      <h3>Send a Message</h3>
+      <div class="form-msg" id="form-msg"></div>
+      <form id="contact-form">
+        <!-- honeypot: real users never see or fill this; bots that auto-fill every field will -->
+        <div class="honeypot-field" aria-hidden="true">
+          <label for="cf_company">Company</label>
+          <input type="text" id="cf_company" name="company" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="field"><label for="cf_name">Name</label><input id="cf_name" type="text" required></div>
+        <div class="field"><label for="cf_email">Email</label><input id="cf_email" type="email" required></div>
+        <div class="field"><label for="cf_subject">Subject</label><input id="cf_subject" type="text" placeholder="Optional"></div>
+        <div class="field"><label for="cf_message">Message</label><textarea id="cf_message" rows="5" required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-block" id="contact-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+        <p style="color:var(--ink-dim);font-size:13px;margin-top:12px;max-width:32ch">Wholesale sourcing for fabrics, apparel, and accessories — built for buyers who order in bulk.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="products.html">All Products</a>
+        <a href="products.html">Categories</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ZAVQEN Wholesale. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

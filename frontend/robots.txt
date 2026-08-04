@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /admin-dashboard.html
+Disallow: /admin-products.html
+Disallow: /admin-categories.html
+Disallow: /admin-orders.html
+Disallow: /admin-customers.html
+Disallow: /admin-settings.html
+Disallow: /dashboard.html
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /order-success.html
+
+Sitemap: https://YOUR_DOMAIN/sitemap.xml

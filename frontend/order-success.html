@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Placed — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"></div>
+    <div class="nav-actions"><span id="nav-auth-slot"></span></div>
+  </div>
+</nav>
+
+<div class="auth-shell">
+  <div class="auth-card" style="text-align:center;max-width:440px">
+    <span class="swatch-tag" style="position:static;display:inline-block;margin-bottom:16px">Order Confirmed</span>
+    <h1>Thanks — your order is in.</h1>
+    <p class="sub" id="order-ref">Order reference loading…</p>
+    <p style="color:var(--ink-dim);font-size:13.5px;margin-bottom:28px">We'll update the status as it moves from processing to shipped. You can track it anytime from your dashboard.</p>
+    <a href="dashboard.html" class="btn btn-primary btn-block">View My Orders</a>
+    <a href="products.html" class="btn btn-outline btn-block" style="margin-top:10px">Continue Shopping</a>
+  </div>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  const orderId = new URLSearchParams(window.location.search).get("order");
+  document.getElementById("order-ref").textContent = orderId
+    ? `Order #${orderId.slice(0, 8).toUpperCase()}`
+    : "Order placed successfully.";
+</script>
+</body>
+</html>

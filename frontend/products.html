@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Products — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="products.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <form class="nav-search" id="nav-search-form">
+      <input type="search" id="nav-search-input" placeholder="Search wholesale products…">
+    </form>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">Cart<span class="cart-count" id="cart-count">0</span></a>
+      <span id="nav-auth-slot"></span>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="listing-layout">
+    <aside>
+      <form id="listing-search-form" class="field" style="margin-bottom:24px">
+        <input type="search" id="listing-search-input" placeholder="Search…">
+      </form>
+
+      <div class="filter-block">
+        <h3>Category</h3>
+        <div id="filter-category">Loading…</div>
+      </div>
+
+      <div class="filter-block">
+        <h3>Price</h3>
+        <label class="filter-opt"><input type="radio" name="price" value="0-1000"> Under Rs 1,000</label>
+        <label class="filter-opt"><input type="radio" name="price" value="1000-5000"> Rs 1,000 – 5,000</label>
+        <label class="filter-opt"><input type="radio" name="price" value="5000+"> Rs 5,000+</label>
+        <label class="filter-opt"><input type="radio" name="price" value=""> Any price</label>
+      </div>
+
+      <div class="filter-block">
+        <h3>Availability</h3>
+        <label class="filter-opt"><input type="radio" name="availability" value="in"> In stock</label>
+        <label class="filter-opt"><input type="radio" name="availability" value="out"> Out of stock</label>
+        <label class="filter-opt"><input type="radio" name="availability" value=""> All</label>
+      </div>
+    </aside>
+
+    <main>
+      <div class="listing-top">
+        <span class="result-count" id="result-count">Loading…</span>
+        <select id="sort-select">
+          <option value="newest">Newest</option>
+          <option value="price_asc">Price: Low to High</option>
+          <option value="price_desc">Price: High to Low</option>
+          <option value="name_asc">Name: A–Z</option>
+        </select>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="pagination" id="pagination"></div>
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 ZAVQEN Wholesale. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/products.js"></script>
+</body>
+</html>

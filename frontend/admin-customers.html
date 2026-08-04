@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Customers — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a></div>
+    <div class="nav-actions"><span id="nav-auth-slot"></span></div>
+  </div>
+</nav>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <span class="eyebrow">Admin Panel</span>
+    <a href="admin-dashboard.html" data-page="dashboard">Dashboard</a>
+    <a href="admin-products.html" data-page="products">Products</a>
+    <a href="admin-categories.html" data-page="categories">Categories</a>
+    <a href="admin-orders.html" data-page="orders">Orders</a>
+    <a href="admin-customers.html" data-page="customers">Customers</a>
+    <a href="admin-settings.html" data-page="settings">Settings</a>
+    <div class="admin-back"><a href="index.html">← Back to store</a></div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-head">
+      <div>
+        <h2>Customers</h2>
+        <p>Everyone who's registered an account, with their order history at a glance.</p>
+      </div>
+    </div>
+
+    <div class="admin-toolbar">
+      <div class="admin-search"><input type="search" id="customer-search" placeholder="Search customers…"></div>
+      <span class="result-count" id="customer-count"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Name</th><th>Phone</th><th>Joined</th><th>Orders</th><th>Total Spent</th></tr></thead>
+        <tbody id="customers-tbody"><tr><td colspan="5">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin-common.js"></script>
+<script src="js/admin-customers.js"></script>
+</body>
+</html>

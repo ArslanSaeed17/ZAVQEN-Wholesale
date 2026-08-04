@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Products — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a></div>
+    <div class="nav-actions"><span id="nav-auth-slot"></span></div>
+  </div>
+</nav>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <span class="eyebrow">Admin Panel</span>
+    <a href="admin-dashboard.html" data-page="dashboard">Dashboard</a>
+    <a href="admin-products.html" data-page="products">Products</a>
+    <a href="admin-categories.html" data-page="categories">Categories</a>
+    <a href="admin-orders.html" data-page="orders">Orders</a>
+    <a href="admin-customers.html" data-page="customers">Customers</a>
+    <a href="admin-settings.html" data-page="settings">Settings</a>
+    <div class="admin-back"><a href="index.html">← Back to store</a></div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-head">
+      <div>
+        <h2>Products</h2>
+        <p>Add, edit, and manage stock for everything in the catalog.</p>
+      </div>
+      <button class="btn btn-primary" id="add-product-btn">+ Add Product</button>
+    </div>
+
+    <div class="admin-toolbar">
+      <div class="admin-search">
+        <input type="search" id="product-search" placeholder="Search products…">
+      </div>
+      <span class="result-count" id="product-count"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th></th><th>Name</th><th>SKU</th><th>Category</th><th>Price</th><th>MOQ</th><th>Stock</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody id="products-tbody">
+          <tr><td colspan="9">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- Add / Edit Product Modal -->
+<div class="modal-overlay" id="product-modal">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="product-modal-title">Add Product</h3>
+      <button class="modal-close" id="product-modal-close">✕</button>
+    </div>
+    <div class="form-msg" id="product-form-msg"></div>
+    <form id="product-form">
+      <input type="hidden" id="p_id">
+      <div class="field"><label for="p_name">Product name</label><input id="p_name" type="text" required></div>
+      <div class="field-row">
+        <div class="field"><label for="p_slug">URL slug</label><input id="p_slug" type="text" required></div>
+        <div class="field"><label for="p_sku">SKU</label><input id="p_sku" type="text" placeholder="Optional"></div>
+      </div>
+      <div class="field"><label for="p_category">Category</label>
+        <select id="p_category"><option value="">— None —</option></select>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="p_price">Price (PKR)</label><input id="p_price" type="number" min="0" step="0.01" required></div>
+        <div class="field"><label for="p_moq">MOQ</label><input id="p_moq" type="number" min="1" step="1" required></div>
+      </div>
+      <div class="field"><label for="p_stock">Stock</label><input id="p_stock" type="number" min="0" step="1" required></div>
+      <div class="field"><label for="p_description">Description</label><textarea id="p_description" rows="3"></textarea></div>
+      <div class="field">
+        <label>Images</label>
+        <label class="img-upload-zone" for="p_images_input">Click to upload (JPG/PNG/WEBP/GIF, max 5MB each)</label>
+        <input type="file" id="p_images_input" accept="image/*" multiple style="display:none">
+        <div class="img-preview-row" id="p_images_preview"></div>
+      </div>
+      <div class="field">
+        <label class="filter-opt"><input type="checkbox" id="p_active" checked> Active (visible in store)</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="product-save-btn">Save Product</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin-common.js"></script>
+<script src="js/admin-products.js"></script>
+</body>
+</html>

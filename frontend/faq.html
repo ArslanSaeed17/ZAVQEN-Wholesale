@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — ZAVQEN Wholesale</title>
+<meta name="description" content="Answers to common questions about MOQs, shipping, payment, and ordering from ZAVQEN Wholesale.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="products.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <form class="nav-search" id="nav-search-form">
+      <input type="search" id="nav-search-input" placeholder="Search wholesale products…">
+    </form>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">Cart<span class="cart-count" id="cart-count">0</span></a>
+      <span id="nav-auth-slot"></span>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="content-page">
+    <span class="eyebrow">Support</span>
+    <h1>Frequently Asked Questions</h1>
+    <p class="sub">Everything you need to know before placing a bulk order.</p>
+
+    <details class="faq-item" open>
+      <summary>What does MOQ mean?</summary>
+      <p>MOQ stands for Minimum Order Quantity — the smallest amount of a product you can order. It's shown on every product card and product page, and the cart automatically enforces it.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What payment methods do you accept?</summary>
+      <p>Cash on Delivery (COD) and Bank Transfer. You'll choose your preferred method at checkout.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How do I track my order?</summary>
+      <p>Log in and open your Dashboard — every order shows its current status (Pending, Processing, Shipped, Delivered, or Cancelled).</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I change my order after placing it?</summary>
+      <p>Reach out to us via WhatsApp or the Contact page as soon as possible with your order number. Once an order has shipped, changes usually aren't possible.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What if an item is out of stock?</summary>
+      <p>Out-of-stock items are clearly marked and can't be added to cart. Stock is checked again at checkout, so quantities are always accurate at the time you order.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you ship across Pakistan?</summary>
+      <p>Yes — we ship nationwide. Delivery timelines vary by city and are confirmed once your order moves to "Shipped."</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is my account information secure?</summary>
+      <p>Yes. Authentication is handled by Supabase with email verification, and every account can only ever see its own orders and addresses — enforced at the database level, not just in the app.</p>
+    </details>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 ZAVQEN Wholesale. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

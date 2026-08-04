@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · Orders — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a></div>
+    <div class="nav-actions"><span id="nav-auth-slot"></span></div>
+  </div>
+</nav>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <span class="eyebrow">Admin Panel</span>
+    <a href="admin-dashboard.html" data-page="dashboard">Dashboard</a>
+    <a href="admin-products.html" data-page="products">Products</a>
+    <a href="admin-categories.html" data-page="categories">Categories</a>
+    <a href="admin-orders.html" data-page="orders">Orders</a>
+    <a href="admin-customers.html" data-page="customers">Customers</a>
+    <a href="admin-settings.html" data-page="settings">Settings</a>
+    <div class="admin-back"><a href="index.html">← Back to store</a></div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-head">
+      <div>
+        <h2>Orders</h2>
+        <p>Track and update order status as it moves through fulfillment.</p>
+      </div>
+    </div>
+
+    <div class="admin-tabs" id="status-tabs">
+      <button class="admin-tab active" data-status="">All</button>
+      <button class="admin-tab" data-status="pending">Pending</button>
+      <button class="admin-tab" data-status="processing">Processing</button>
+      <button class="admin-tab" data-status="shipped">Shipped</button>
+      <button class="admin-tab" data-status="delivered">Delivered</button>
+      <button class="admin-tab" data-status="cancelled">Cancelled</button>
+    </div>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Payment</th><th>Total</th><th>Status</th><th></th></tr></thead>
+        <tbody id="orders-tbody"><tr><td colspan="7">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- Order Detail Modal -->
+<div class="modal-overlay" id="order-modal">
+  <div class="modal-card" style="max-width:640px">
+    <div class="modal-head">
+      <h3 id="order-modal-title">Order</h3>
+      <button class="modal-close" id="order-modal-close">✕</button>
+    </div>
+    <div id="order-modal-body">Loading…</div>
+  </div>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin-common.js"></script>
+<script src="js/admin-orders.js"></script>
+</body>
+</html>

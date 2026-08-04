@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin Dashboard — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="products.html">Products</a></div>
+    <div class="nav-actions"><span id="nav-auth-slot"></span></div>
+  </div>
+</nav>
+
+<div class="admin-shell">
+  <aside class="admin-sidebar">
+    <span class="eyebrow">Admin Panel</span>
+    <a href="admin-dashboard.html" data-page="dashboard">Dashboard</a>
+    <a href="admin-products.html" data-page="products">Products</a>
+    <a href="admin-categories.html" data-page="categories">Categories</a>
+    <a href="admin-orders.html" data-page="orders">Orders</a>
+    <a href="admin-customers.html" data-page="customers">Customers</a>
+    <a href="admin-settings.html" data-page="settings">Settings</a>
+    <div class="admin-back"><a href="index.html">← Back to store</a></div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-head">
+      <div>
+        <h2>Dashboard</h2>
+        <p>A quick look at how the store is doing.</p>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card"><span class="label">Products</span><span class="num" id="stat-products">—</span></div>
+      <div class="stat-card"><span class="label">Total Orders</span><span class="num" id="stat-orders">—</span></div>
+      <div class="stat-card"><span class="label">Pending Orders</span><span class="num" id="stat-pending">—</span></div>
+      <div class="stat-card"><span class="label">Customers</span><span class="num" id="stat-customers">—</span></div>
+    </div>
+    <div class="stat-grid" style="grid-template-columns:1fr">
+      <div class="stat-card"><span class="label">Total Revenue (excl. cancelled)</span><span class="num" id="stat-revenue">—</span></div>
+    </div>
+
+    <div class="admin-panel-block">
+      <h3>Recent Orders</h3>
+      <div id="recent-orders">Loading…</div>
+    </div>
+  </main>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin-common.js"></script>
+<script src="js/admin-dashboard.js"></script>
+</body>
+</html>

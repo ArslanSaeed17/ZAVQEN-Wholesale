@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links"></div>
+    <div class="nav-actions"><a href="login.html">Already have an account? Log in</a></div>
+  </div>
+</nav>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <h1>Create your account</h1>
+    <p class="sub">Register as a buyer to place wholesale orders.</p>
+    <div class="form-msg" id="form-msg"></div>
+    <form id="register-form">
+      <div class="field">
+        <label for="full_name">Full name</label>
+        <input type="text" id="full_name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" required autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" required minlength="8" autocomplete="new-password">
+      </div>
+      <div class="field">
+        <label for="confirm_password">Confirm password</label>
+        <input type="password" id="confirm_password" required minlength="8" autocomplete="new-password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="register-btn">Create account</button>
+    </form>
+    <div class="auth-links">
+      <a href="login.html">Have an account? Log in</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

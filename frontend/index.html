@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZAVQEN Wholesale — Bulk Sourcing, Simplified</title>
+<meta name="description" content="Wholesale fabrics, apparel and accessories at MOQ-friendly bulk prices.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Products</a>
+      <a href="products.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <form class="nav-search" id="nav-search-form">
+      <input type="search" id="nav-search-input" placeholder="Search wholesale products…">
+    </form>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">Cart<span class="cart-count" id="cart-count">0</span></a>
+      <span id="nav-auth-slot"></span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Wholesale — By The Case, Not The Piece</span>
+      <h1>Source in bulk, without the back-and-forth.</h1>
+      <p>Browse verified stock, clear MOQs, and transparent unit pricing from a single trusted supplier — no quote requests, no waiting.</p>
+      <div style="display:flex;gap:12px">
+        <a href="products.html" class="btn btn-primary">Browse Products</a>
+        <a href="about.html" class="btn btn-outline">How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>500+</b><span>SKUs in stock</span></div>
+        <div class="hero-stat"><b>24–48h</b><span>Order processing</span></div>
+        <div class="hero-stat"><b>1</b><span>Trusted supplier</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="tag-demo" style="position:relative">
+        <span class="swatch-tag" style="position:static;display:inline-block">MOQ 50 UNITS</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>Shop by Category</h2>
+      <a href="products.html">View all →</a>
+    </div>
+    <div class="cat-grid" id="cat-grid"></div>
+  </div>
+</section>
+
+<section style="background:var(--surface);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
+  <div class="container">
+    <div class="section-head">
+      <h2>Featured Products</h2>
+      <a href="products.html">View all →</a>
+    </div>
+    <div class="product-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>New Arrivals</h2>
+      <a href="products.html?sort=newest">View all →</a>
+    </div>
+    <div class="product-grid" id="arrivals-grid"></div>
+  </div>
+</section>
+
+<section style="border-top:1px solid var(--border-soft)">
+  <div class="container">
+    <div class="section-head"><h2>Why Buy From ZAVQEN</h2></div>
+    <div class="features">
+      <div class="feature"><span class="num">01</span><b>Verified Stock</b><p>Inventory counts are live — what you see is what's actually available to ship.</p></div>
+      <div class="feature"><span class="num">02</span><b>Clear MOQs</b><p>Every listing states its minimum order quantity up front. No surprise negotiations.</p></div>
+      <div class="feature"><span class="num">03</span><b>Flat Unit Pricing</b><p>No tiered quote requests — the price you see is the price you pay per unit.</p></div>
+      <div class="feature"><span class="num">04</span><b>Direct From Supplier</b><p>Single-owner sourcing means fewer middlemen and faster answers.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+        <p style="color:var(--ink-dim);font-size:13px;margin-top:12px;max-width:32ch">Wholesale sourcing for fabrics, apparel, and accessories — built for buyers who order in bulk.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="products.html">All Products</a>
+        <a href="products.html">Categories</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="#" data-whatsapp-link target="_blank" rel="noopener" style="display:none">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ZAVQEN Wholesale. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account — ZAVQEN Wholesale</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+    </div>
+    <div class="nav-actions">
+      <a href="cart.html" class="btn-cart">Cart<span class="cart-count" id="cart-count">0</span></a>
+      <span id="nav-auth-slot"></span>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="section-head" style="padding-top:32px"><h2>My Account</h2></div>
+
+  <div class="dash-tabs">
+    <button class="dash-tab active" data-tab="orders">Orders</button>
+    <button class="dash-tab" data-tab="addresses">Addresses</button>
+    <button class="dash-tab" data-tab="profile">Profile</button>
+  </div>
+
+  <div class="dash-panel active" id="panel-orders">
+    <div id="orders-list">Loading…</div>
+  </div>
+
+  <div class="dash-panel" id="panel-addresses">
+    <div class="dash-two-col">
+      <div id="addresses-list">Loading…</div>
+      <div class="checkout-block">
+        <h3>Add New Address</h3>
+        <div class="form-msg" id="address-msg"></div>
+        <form id="address-form">
+          <div class="field"><label for="addr_label">Label</label><input id="addr_label" type="text" placeholder="e.g. Warehouse, Shop"></div>
+          <div class="field-row">
+            <div class="field"><label for="addr_full_name">Full name</label><input id="addr_full_name" type="text" required></div>
+            <div class="field"><label for="addr_phone">Phone</label><input id="addr_phone" type="tel" required></div>
+          </div>
+          <div class="field"><label for="addr_line1">Address line 1</label><input id="addr_line1" type="text" required></div>
+          <div class="field"><label for="addr_line2">Address line 2 (optional)</label><input id="addr_line2" type="text"></div>
+          <div class="field-row">
+            <div class="field"><label for="addr_city">City</label><input id="addr_city" type="text" required></div>
+            <div class="field"><label for="addr_state">State/Province</label><input id="addr_state" type="text"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="addr_postal">Postal code</label><input id="addr_postal" type="text"></div>
+            <div class="field"><label for="addr_country">Country</label><input id="addr_country" type="text" value="Pakistan"></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Save Address</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="dash-panel" id="panel-profile">
+    <div class="checkout-block" style="max-width:440px">
+      <h3>Profile</h3>
+      <div class="form-msg" id="profile-msg"></div>
+      <form id="profile-form">
+        <div class="field"><label for="profile_email">Email</label><input id="profile_email" type="email" disabled></div>
+        <div class="field"><label for="profile_full_name">Full name</label><input id="profile_full_name" type="text" required></div>
+        <div class="field"><label for="profile_phone">Phone</label><input id="profile_phone" type="tel" required></div>
+        <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 ZAVQEN Wholesale. All rights reserved.</span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/apiClient.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
