@@ -5,7 +5,7 @@
 // =========================================================
 
 // EDIT THIS before deploying — your Railway backend's public URL.
-const API_BASE_URL = "https://YOUR-BACKEND.up.railway.app";
+const API_BASE_URL = "https://web-production-e6c64.up.railway.app";
 
 const TOKEN_KEY = "zavqen_token";
 
