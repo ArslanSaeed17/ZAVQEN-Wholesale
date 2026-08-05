@@ -7,40 +7,131 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="login-page">
 
 <nav class="site-nav">
   <div class="container">
     <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
     <div class="nav-links"></div>
-    <div class="nav-actions"><a href="register.html">New here? Create an account</a></div>
+    <div class="nav-actions"><a href="register.html">New here? <strong>Create an account</strong> <span class="arrow">→</span></a></div>
   </div>
 </nav>
 
 <div class="auth-shell">
-  <div class="auth-card">
-    <h1>Welcome back</h1>
-    <p class="sub">Log in to browse and order.</p>
-    <div class="form-msg" id="form-msg"></div>
-    <form id="login-form">
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" required autocomplete="email">
+
+  <!-- LEFT: brand / hero panel -->
+  <div class="auth-hero">
+    <div class="auth-hero-glow"></div>
+    <div class="auth-hero-content">
+      <span class="eyebrow">Wholesale. Simplified.</span>
+      <h1>Welcome back<br>to <span class="accent">Zavqen.</span></h1>
+      <p class="hero-sub">Log in to your account to browse products, check prices and place wholesale orders with ease.</p>
+
+      <ul class="hero-features">
+        <li>
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8l-9-5-9 5 9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+          </span>
+          <span>
+            <strong>Trusted by Thousands</strong>
+            <small>Reliable wholesale platform for businesses</small>
+          </span>
+        </li>
+        <li>
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <span>
+            <strong>Secure &amp; Safe</strong>
+            <small>Your data is encrypted and protected</small>
+          </span>
+        </li>
+        <li>
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.6 12.6 12.9 20.3a2 2 0 0 1-2.83 0l-7.4-7.4a2 2 0 0 1 0-2.83l7.7-7.7A2 2 0 0 1 11.8 2H19a3 3 0 0 1 3 3v6.19a2 2 0 0 1-1.4 1.41Z"/><circle cx="15.5" cy="7.5" r="1.5"/></svg>
+          </span>
+          <span>
+            <strong>Best Prices</strong>
+            <small>Competitive wholesale prices, always</small>
+          </span>
+        </li>
+      </ul>
+
+      <div class="hero-footer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 11 4.6-2.3 8-6 8-11V5l-8-3Z"/></svg>
+        Secure login <span class="dot">•</span> Encrypted connection
       </div>
-      <div class="field">
-        <label for="password">Password</label>
-        <input type="password" id="password" required autocomplete="current-password">
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" id="login-btn">Log in</button>
-    </form>
-    <div class="auth-links">
-      <a href="register.html">Create an account</a>
-      <a href="forgot-password.html">Forgot password?</a>
     </div>
   </div>
+
+  <!-- RIGHT: login card -->
+  <div class="auth-card-wrap">
+    <div class="auth-card">
+      <div class="auth-card-icon">Z.</div>
+      <h2>Welcome back</h2>
+      <p class="sub">Log in to browse and order.</p>
+
+      <div class="form-msg" id="form-msg"></div>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="email">Email</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <input type="email" id="email" placeholder="you@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <input type="password" id="password" placeholder="Enter your password" required autocomplete="current-password">
+            <button type="button" class="toggle-pass" id="toggle-pass" aria-label="Show password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <label class="checkbox">
+            <input type="checkbox" id="remember" checked>
+            <span class="box"></span>
+            Remember me
+          </label>
+          <a href="forgot-password.html" class="link-muted">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="login-btn">
+          Log in <span class="arrow">→</span>
+        </button>
+      </form>
+
+      <div class="divider"><span>or</span></div>
+
+      <button type="button" class="btn btn-google btn-block" id="google-login-btn">
+        <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.9 32.5 29.4 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l6-6C34.5 5.5 29.5 3.5 24 3.5 12.7 3.5 3.5 12.7 3.5 24S12.7 44.5 24 44.5 44.5 35.3 44.5 24c0-1.2-.1-2.4-.9-3.5Z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.6 15.9 18.9 13 24 13c3.1 0 5.9 1.2 8 3.1l6-6C34.5 6.5 29.5 4.5 24 4.5c-7.9 0-14.6 4.5-17.7 11.2Z"/><path fill="#4CAF50" d="M24 44.5c5.4 0 10.3-1.9 14-5.1l-6.5-5.4C29.6 35.7 26.9 36.5 24 36.5c-5.3 0-9.8-3.4-11.4-8.1l-6.6 5.1C9.3 39.9 16.1 44.5 24 44.5Z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.7 1.9-1.9 3.5-3.5 4.6l6.5 5.4C41.8 35 44.5 30 44.5 24c0-1.2-.1-2.4-.9-3.5Z"/></svg>
+        Continue with Google
+      </button>
+
+      <div class="auth-links">
+        <p class="terms">By logging in, you agree to our <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script src="js/apiClient.js"></script>
 <script src="js/auth.js"></script>
+<script>
+  // password visibility toggle — purely presentational, does not touch auth logic
+  document.getElementById('toggle-pass').addEventListener('click', function () {
+    var pass = document.getElementById('password');
+    var isText = pass.type === 'text';
+    pass.type = isText ? 'password' : 'text';
+    this.classList.toggle('is-visible', !isText);
+  });
+</script>
 </body>
-</html> 
+</html>
