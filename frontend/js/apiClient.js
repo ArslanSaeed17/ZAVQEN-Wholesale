@@ -5,7 +5,9 @@
 // =========================================================
 
 // EDIT THIS before deploying — your Railway backend's public URL.
-const API_BASE_URL = "https://web-production-e0f23.up.railway.app/";
+// No trailing slash (e.g. "https://your-backend.up.railway.app", not ".../").
+const API_BASE_URL_RAW = "https://web-production-e0f23.up.railway.app";
+const API_BASE_URL = API_BASE_URL_RAW.replace(/\/+$/, ""); // strip any trailing slash regardless
 
 const TOKEN_KEY = "zavqen_token";
 
