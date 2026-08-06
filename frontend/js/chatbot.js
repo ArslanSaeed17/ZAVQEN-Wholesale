@@ -1,7 +1,10 @@
 // ============================================================
-//  Student Market Palace — Chatbot Widget  v4.0
-//  New: Typing sounds, Developer modal, Better branding,
-//       Realistic typing animation, Character-by-character reveal
+//  ZAVQEN Wholesale — Chatbot Widget  v4.0
+//  Typing sounds, Developer modal, Realistic typing animation,
+//  Character-by-character reveal
+//  (Rebranded from the original Student Market Palace widget —
+//   same CSS, animations, sounds, and developer modal structure,
+//   only the branding text and knowledge base changed.)
 // ============================================================
 (function () {
   'use strict';
@@ -61,7 +64,7 @@
     try {
       const ctx = getAudioCtx();
       if (!ctx) return;
-      [0, 0.08].forEach(function(delay, i) {
+      [0, 0.08].forEach(function (delay, i) {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.connect(gain);
@@ -684,9 +687,9 @@
   // ── Build HTML ──────────────────────────────────────────────
   const fab = document.createElement('button');
   fab.id = 'smp-fab';
-  fab.setAttribute('aria-label', 'Open SMP Chat');
+  fab.setAttribute('aria-label', 'Open ZAVQEN Wholesale Chat');
   fab.innerHTML = `
-    <span class="smp-fab-emoji">🤖</span>
+    <span class="smp-fab-emoji">📦</span>
     <div class="smp-badge">1</div>
   `;
 
@@ -694,9 +697,9 @@
   win.id = 'smp-win';
   win.innerHTML = `
     <div id="smp-header">
-      <div class="smp-h-logo">🏪</div>
+      <div class="smp-h-logo">🛍️</div>
       <div class="smp-h-info">
-        <div class="smp-h-name">Student Market Palace</div>
+        <div class="smp-h-name">ZAVQEN Wholesale</div>
         <div class="smp-h-sub">AI Assistant</div>
         <div class="smp-h-status">
           <div class="smp-dot"></div>
@@ -714,21 +717,21 @@
     </div>
     <div id="smp-msgs">
       <div class="smp-m bot">
-        👋 <strong>Welcome to Student Market Palace AI Assistant!</strong><br><br>
+        👋 <strong>Welcome to ZAVQEN Wholesale AI Assistant!</strong><br><br>
         I can help you with:<br>
-        🛒 Buying and selling products<br>
-        🗺️ Website navigation<br>
-        ⚙️ Marketplace features<br>
-        👤 Account assistance<br>
-        ❓ General SMP-related questions<br><br>
+        📦 Browsing wholesale products<br>
+        🛒 Placing an order (via WhatsApp)<br>
+        🚚 Shipping & delivery info<br>
+        👤 Account & order tracking<br>
+        ❓ General ZAVQEN questions<br><br>
         <em>Developed by Arslan Saeed 🚀</em>
       </div>
     </div>
     <div id="smp-sugg">
-      <button class="smp-sq">🛒 How to sell?</button>
-      <button class="smp-sq">📬 Contact info</button>
-      <button class="smp-sq">💰 Kitna free hai?</button>
-      <button class="smp-sq">🛡️ Safety tips</button>
+      <button class="smp-sq">📦 How to order?</button>
+      <button class="smp-sq">📉 What's MOQ?</button>
+      <button class="smp-sq">🚚 Shipping info</button>
+      <button class="smp-sq">📞 Contact info</button>
     </div>
     <div id="smp-input-row">
       <input id="smp-input" type="text" placeholder="Kuch poochho…" maxlength="400" autocomplete="off" />
@@ -747,9 +750,10 @@
         <div class="smp-dev-name">Arslan Saeed</div>
         <div class="smp-dev-title">Creator & Full-Stack Developer</div>
         <div class="smp-dev-tagline">
-          Built Student Market Palace with dedication to help<br>
-          students buy, sell, and connect through a modern<br>
-          campus marketplace platform.
+          Built ZAVQEN Wholesale, a modern wholesale<br>
+          marketplace where retailers, resellers, and<br>
+          businesses can source products in bulk across<br>
+          multiple categories.
         </div>
       </div>
       <div class="smp-dev-body">
@@ -762,7 +766,7 @@
             <span class="smp-tech-tag smp-tt-cyan">FastAPI</span>
             <span class="smp-tech-tag smp-tt-cyan">Python</span>
             <span class="smp-tech-tag smp-tt-purple">PostgreSQL</span>
-            <span class="smp-tech-tag smp-tt-purple">Supabase</span>
+            <span class="smp-tech-tag smp-tt-purple">Railway</span>
             <span class="smp-tech-tag smp-tt-green">REST APIs</span>
             <span class="smp-tech-tag smp-tt-green">Vercel</span>
             <span class="smp-tech-tag smp-tt-green">Git & GitHub</span>
@@ -773,7 +777,7 @@
           <ul class="smp-contrib-list">
             <li class="smp-contrib-item">
               <div class="smp-contrib-icon">🏗️</div>
-              Designed &amp; developed the complete platform architecture
+              Designed &amp; developed the complete wholesale platform architecture
             </li>
             <li class="smp-contrib-item">
               <div class="smp-contrib-icon">🔐</div>
@@ -793,11 +797,11 @@
             </li>
             <li class="smp-contrib-item">
               <div class="smp-contrib-icon">🔍</div>
-              Created marketplace listing and search functionality
+              Built the wholesale catalog, cart, and WhatsApp ordering flow
             </li>
             <li class="smp-contrib-item">
               <div class="smp-contrib-icon">🤖</div>
-              Integrated AI-powered chatbot support system
+              Integrated this AI-powered chatbot support system
             </li>
           </ul>
         </div>
@@ -821,66 +825,66 @@
   // ── Knowledge Base ──────────────────────────────────────────
   const KB = [
     {
-      keywords: ['sell','selling','bechna','becho','list','listing','post ad','add product','upload','apload'],
-      answer: '🛒 <strong>Selling is super easy!</strong><br><br>1️⃣ Click "Post Ad" on homepage<br>2️⃣ Choose a category<br>3️⃣ Add title, price, photos & description<br>4️⃣ Enter your WhatsApp/email<br>5️⃣ Submit — goes live instantly!<br><br>✅ <strong>Completely FREE for all students!</strong>'
+      keywords: ['order', 'ordering', 'kharidna', 'purchase', 'buy', 'khareedna', 'khareed', 'checkout'],
+      answer: '📦 <strong>Placing an order:</strong><br><br>1️⃣ Browse Products or a Category<br>2️⃣ Open a product, set quantity (MOQ applies)<br>3️⃣ Add to Cart — or hit "Order Now" for a quick single-item order<br>4️⃣ Go to Checkout, confirm your details<br>5️⃣ We open WhatsApp with your order summary to finalize<br><br>💬 Deals get confirmed directly with us over WhatsApp!'
     },
     {
-      keywords: ['buy','buying','kharidna','purchase','order','khareedna','khareed'],
-      answer: '🔍 <strong>Buying on SMP:</strong><br><br>1️⃣ Browse or search listings<br>2️⃣ Click product to see details<br>3️⃣ Hit "Contact Seller" (WhatsApp/Email)<br>4️⃣ Agree on price, meet safely on campus<br><br>💡 No online payment — direct student deals!'
+      keywords: ['whatsapp', 'wa.me', 'chat on whatsapp', 'order via whatsapp'],
+      answer: '💬 <strong>Ordering via WhatsApp:</strong><br><br>After checkout, your order is saved to your account AND a WhatsApp chat opens automatically with your order details pre-filled — quantities, prices, and total. You just hit send and we take it from there!'
     },
     {
-      keywords: ['contact','email','whatsapp','reach','support','help','helpline','admin'],
-      answer: '📬 <strong>SMP Support:</strong><br><br>📧 arslanbrall@gmail.com<br>💬 WhatsApp: +92-300-8971489<br>🕐 Mon–Sat, 9am–6pm<br><br>Or use "Contact Seller" on any listing!'
+      keywords: ['moq', 'minimum order', 'minimum quantity', 'kitni quantity', 'bulk'],
+      answer: '📉 <strong>MOQ (Minimum Order Quantity):</strong><br><br>Every product lists its own MOQ on the product page — that\'s the smallest quantity you can order for that item. Cart and checkout automatically enforce it, so you\'ll never accidentally order below the minimum.'
     },
     {
-      keywords: ['free','cost','price','fee','charge','kitna','paid','muft','paisa','paise','rupay','rupees'],
-      answer: '✅ <strong>100% FREE!</strong><br><br>• No listing fee<br>• No commission<br>• No hidden charges<br>• No subscription<br><br>Just register with your student email and go!'
+      keywords: ['contact', 'email', 'reach', 'support', 'help', 'helpline', 'admin'],
+      answer: '📬 <strong>ZAVQEN Wholesale Support:</strong><br><br>📧 arslanbrall@gmail.com<br>💬 WhatsApp available on every product and checkout page<br>📍 Lahore, Pakistan<br><br>Or use the "Order on WhatsApp" button on any product!'
     },
     {
-      keywords: ['safety','safe','scam','fraud','tips','secure','dhoka','trust','fake'],
-      answer: '🛡️ <strong>Safety Tips:</strong><br><br>• Meet in a public / on-campus place<br>• Never pay in advance<br>• Verify seller on WhatsApp first<br>• Don\'t share CNIC or bank details<br>• Prefer cash on delivery<br>• Report fakes to admin instantly<br><br>🚨 Suspicious? Email us!'
+      keywords: ['category', 'categories', 'products', 'items', 'stock', 'what do you sell', 'electronics', 'fashion', 'clothes'],
+      answer: '📦 <strong>What we stock:</strong><br><br>ZAVQEN Wholesale carries multiple bulk categories — browse the Categories menu on the site for the current full list, with live stock counts and clear per-item pricing.<br><br>🔎 Use Search or the filters (category / price / availability) on the Products page to narrow it down fast.'
     },
     {
-      keywords: ['account','register','signup','sign up','login','log in','profile'],
-      answer: '👤 <strong>Create Account:</strong><br><br>1️⃣ Click "Register" in navigation<br>2️⃣ Enter name & student email<br>3️⃣ Set strong password<br>4️⃣ Verify email (check spam too!)<br>5️⃣ Done — start posting!<br><br>💡 Already registered? Just click Login!'
+      keywords: ['safety', 'safe', 'scam', 'fraud', 'tips', 'secure', 'dhoka', 'trust', 'fake'],
+      answer: '🛡️ <strong>Buying safely:</strong><br><br>• Orders and stock are managed through your account, not informal chats<br>• Final pricing and totals are shown before you confirm<br>• All order details are saved to your Order History for reference<br>• Never share your password or OTP with anyone claiming to be support<br><br>🚨 Something feels off? Email us directly.'
     },
     {
-      keywords: ['delete','remove','edit','update','change','modify','hatana','badalna'],
-      answer: '✏️ <strong>Edit / Delete listing:</strong><br><br>1️⃣ Log in to your account<br>2️⃣ Profile icon → "My Listings"<br>3️⃣ Find your item<br>4️⃣ ✏️ Edit OR 🗑️ Delete<br><br>⏰ Listings auto-expire after 30 days.'
+      keywords: ['account', 'register', 'signup', 'sign up', 'login', 'log in', 'profile'],
+      answer: '👤 <strong>Create an Account:</strong><br><br>1️⃣ Click "Register" in the navigation<br>2️⃣ Enter your name, email, and phone<br>3️⃣ Set a password<br>4️⃣ Log in — start browsing and ordering!<br><br>💡 Already registered? Just click Login.'
     },
     {
-      keywords: ['category','categories','books','electronics','clothes','notes','uniform','laptop','mobile','phone'],
-      answer: '📦 <strong>Available Categories:</strong><br><br>📚 Books & Notes<br>💻 Electronics & Gadgets<br>👕 Clothes & Uniforms<br>🛋️ Dorm & Room Items<br>🎮 Games & Hobbies<br>🍱 Food & Snacks<br>🧪 Lab Equipment<br>📐 Stationery & Supplies<br><br>More coming soon!'
+      keywords: ['track', 'tracking', 'order status', 'my orders', 'order history', 'dashboard'],
+      answer: '📋 <strong>Order Tracking:</strong><br><br>Log in → go to My Account → Orders tab. Every order shows its current status (pending → processing → shipped → delivered) along with the items and total. No need to ask us directly — it\'s always up to date there.'
     },
     {
-      keywords: ['password','forgot','reset','bhool','change password'],
-      answer: '🔑 <strong>Forgot Password?</strong><br><br>1️⃣ Click Login → "Forgot Password?"<br>2️⃣ Enter registered email<br>3️⃣ Check inbox for reset link<br>4️⃣ Set new password<br><br>📧 No email? Check spam or contact us!'
+      keywords: ['shipping', 'delivery', 'deliver', 'kab tak', 'how long', 'time'],
+      answer: '🚚 <strong>Shipping & Delivery:</strong><br><br>Typical order processing is 24–48 hours after confirmation on WhatsApp. Delivery timing depends on your city and order size — we\'ll confirm exact timing with you directly when finalizing the order.'
     },
     {
-      keywords: ['search','find','dhundna','dhundo','item','product','kahan'],
-      answer: '🔎 <strong>Search on SMP:</strong><br><br>• Use the Search Bar at top of homepage<br>• Filter by category, price, location<br>• Sort by Newest or Lowest Price<br><br>💡 Use simple keywords for best results!'
+      keywords: ['payment', 'cod', 'cash on delivery', 'bank transfer', 'pay', 'kaise pay'],
+      answer: '💳 <strong>Payment:</strong><br><br>Payment details and method (cash on delivery, bank transfer, etc.) are confirmed directly with you over WhatsApp once your order is placed — so you always know exactly what you\'re paying before anything is finalized.'
     },
     {
-      keywords: ['photo','image','picture','tasveer','upload photo','add photo'],
-      answer: '📷 <strong>Adding Photos:</strong><br><br>• Up to 5 photos per listing<br>• Formats: JPG, PNG, WEBP<br>• Max 5MB per photo<br><br>💡 Natural daylight = best quality photos!'
+      keywords: ['search', 'find', 'dhundna', 'dhundo', 'kahan'],
+      answer: '🔎 <strong>Search on ZAVQEN:</strong><br><br>• Use the search bar in the navigation on any page<br>• Filter by category, price range, or availability on the Products page<br>• Sort by newest, price, or name<br><br>💡 Simple keywords work best.'
     },
     {
-      keywords: ['smp','student market palace','kya hai','what is','about','platform'],
-      answer: '🎓 <strong>About SMP:</strong><br><br>Student Market Palace is a FREE marketplace built for university students!<br><br>✅ Buy & sell books, electronics, clothes & more<br>✅ Connect directly with fellow students<br>✅ Safe, simple, 100% free<br>✅ No middleman!<br><br>🚀 Built by students, for students!'
+      keywords: ['zavqen', 'what is', 'about', 'platform', 'wholesale marketplace'],
+      answer: '🎓 <strong>About ZAVQEN Wholesale:</strong><br><br>ZAVQEN Wholesale is a bulk-sourcing marketplace — browse verified stock, clear MOQs, and transparent unit pricing from a single trusted supplier.<br><br>✅ No quote requests, no back-and-forth<br>✅ Order confirmed directly over WhatsApp<br>✅ Order history saved to your account<br><br>🚀 Built for retailers, resellers, and small businesses.'
     },
     {
-      keywords: ['developer','dev','arslan','creator','who made','who built','about dev'],
-      answer: '👨‍💻 <strong>About the Developer:</strong><br><br>SMP was built by <strong>Arslan Saeed</strong>, a Cyber Security student at UMT Lahore.<br><br>🔧 Stack: FastAPI, Python, PostgreSQL, Supabase, HTML/CSS/JS, Vercel<br><br>Click the <strong>Dev</strong> button in the header for full profile! 🚀'
+      keywords: ['developer', 'dev', 'arslan', 'creator', 'who made', 'who built', 'about dev'],
+      answer: '👨‍💻 <strong>About the Developer:</strong><br><br>ZAVQEN Wholesale was built by <strong>Arslan Saeed</strong>, a Cyber Security student at UMT Lahore.<br><br>🔧 Stack: FastAPI, Python, PostgreSQL, Railway, HTML/CSS/JS, Vercel<br><br>Click the <strong>Dev</strong> button in the header for the full profile! 🚀'
     },
   ];
 
-  const FALLBACK = '🤔 <strong>Samajh nahi aaya!</strong><br><br>Yeh poochh saktay ho:<br>• 🛒 Selling / Buying<br>• 👤 Account banana<br>• 📬 Contact info<br>• 🛡️ Safety tips<br>• 📦 Categories<br>• 💰 Fees / Cost<br><br>📧 arslanbrall@gmail.com';
+  const FALLBACK = '🤔 <strong>Samajh nahi aaya!</strong><br><br>Yeh poochh saktay ho:<br>• 📦 Order kaise karein<br>• 📉 MOQ kya hai<br>• 👤 Account banana<br>• 📋 Order tracking<br>• 🚚 Shipping<br>• 💳 Payment<br>• 📞 Contact info<br><br>📧 arslanbrall@gmail.com';
 
   function getReply(txt) {
     const lower = txt.toLowerCase().trim();
     if (!lower) return '😊 Kuch to likho! Main yahan hun!';
     for (const e of KB) {
-      if (e.keywords.some(function(kw) { return lower.includes(kw); })) return e.answer;
+      if (e.keywords.some(function (kw) { return lower.includes(kw); })) return e.answer;
     }
     return FALLBACK;
   }
@@ -894,7 +898,7 @@
     win.classList.add('smp-open');
     const badge = fab.querySelector('.smp-badge');
     if (badge) badge.style.display = 'none';
-    setTimeout(function() {
+    setTimeout(function () {
       const inp = document.getElementById('smp-input');
       if (inp) inp.focus();
     }, 420);
@@ -904,7 +908,7 @@
     isOpen = false;
     win.classList.remove('smp-open');
     win.style.animation = 'smp-window-out 0.3s ease forwards';
-    setTimeout(function() {
+    setTimeout(function () {
       win.style.display = 'none';
       win.style.animation = '';
     }, 300);
@@ -921,61 +925,60 @@
   }
 
   // ── Events ──────────────────────────────────────────────────
-  fab.addEventListener('click', function(e) {
+  fab.addEventListener('click', function (e) {
     e.stopPropagation();
     isOpen ? closeChat() : openChat();
   });
 
-  document.addEventListener('click', function(e) {
+  document.addEventListener('click', function (e) {
     if (isOpen && !win.contains(e.target) && e.target !== fab) {
       closeChat();
     }
   });
 
-  devOverlay.addEventListener('click', function(e) {
+  devOverlay.addEventListener('click', function (e) {
     if (e.target === devOverlay) closeDevModal();
   });
 
   // ── Wire Events ──────────────────────────────────────────────
   function wireEvents() {
-    const closeBtn  = document.getElementById('smp-close-btn');
-    const sendBtn   = document.getElementById('smp-send');
-    const input     = document.getElementById('smp-input');
-    const suggBox   = document.getElementById('smp-sugg');
-    const soundBtn  = document.getElementById('smp-sound-btn');
-    const devBtn    = document.getElementById('smp-dev-btn');
-    const devClose  = document.getElementById('smp-dev-close-btn');
+    const closeBtn = document.getElementById('smp-close-btn');
+    const sendBtn = document.getElementById('smp-send');
+    const input = document.getElementById('smp-input');
+    const suggBox = document.getElementById('smp-sugg');
+    const soundBtn = document.getElementById('smp-sound-btn');
+    const devBtn = document.getElementById('smp-dev-btn');
+    const devClose = document.getElementById('smp-dev-close-btn');
 
     if (!closeBtn || !sendBtn || !input) { setTimeout(wireEvents, 50); return; }
 
-    closeBtn.addEventListener('click', function(e) { e.stopPropagation(); closeChat(); });
-    sendBtn.addEventListener('click', function(e) { e.stopPropagation(); doSend(); });
-    input.addEventListener('keydown', function(e) {
+    closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeChat(); });
+    sendBtn.addEventListener('click', function (e) { e.stopPropagation(); doSend(); });
+    input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doSend(); }
     });
-    win.addEventListener('click', function(e) { e.stopPropagation(); });
+    win.addEventListener('click', function (e) { e.stopPropagation(); });
 
     // Sound toggle
     if (soundBtn) {
-      soundBtn.addEventListener('click', function(e) {
+      soundBtn.addEventListener('click', function (e) {
         e.stopPropagation();
         soundEnabled = !soundEnabled;
         soundBtn.textContent = soundEnabled ? '🔊' : '🔇';
         soundBtn.classList.toggle('muted', !soundEnabled);
-        // Unlock AudioContext on first user gesture
         if (soundEnabled && AudioCtx) {
-          try { getAudioCtx(); } catch(e) {}
+          try { getAudioCtx(); } catch (e) {}
         }
       });
     }
 
     // Developer modal
-    if (devBtn)   devBtn.addEventListener('click', function(e)  { e.stopPropagation(); openDevModal(); });
-    if (devClose) devClose.addEventListener('click', function(e) { e.stopPropagation(); closeDevModal(); });
+    if (devBtn) devBtn.addEventListener('click', function (e) { e.stopPropagation(); openDevModal(); });
+    if (devClose) devClose.addEventListener('click', function (e) { e.stopPropagation(); closeDevModal(); });
 
     // Suggestion chips
     if (suggBox) {
-      suggBox.addEventListener('click', function(e) {
+      suggBox.addEventListener('click', function (e) {
         const btn = e.target.closest('.smp-sq');
         if (!btn) return;
         input.value = btn.textContent.replace(/^[^\w\u0600-\u06FF]+/, '').trim();
@@ -985,7 +988,7 @@
     }
 
     // Typing sound on keydown in input
-    input.addEventListener('keydown', function(e) {
+    input.addEventListener('keydown', function (e) {
       if (e.key.length === 1 || e.key === 'Backspace') {
         playTypingClick();
       }
@@ -996,7 +999,7 @@
 
   // ── Send Message ────────────────────────────────────────────
   function doSend() {
-    const input   = document.getElementById('smp-input');
+    const input = document.getElementById('smp-input');
     const sendBtn = document.getElementById('smp-send');
     const suggBox = document.getElementById('smp-sugg');
     if (!input || !sendBtn) return;
@@ -1013,18 +1016,18 @@
 
     // Typing indicator
     const msgsEl = document.getElementById('smp-msgs');
-    const typEl  = document.createElement('div');
+    const typEl = document.createElement('div');
     typEl.className = 'smp-typing';
     typEl.innerHTML = '<span></span><span></span><span></span>';
     msgsEl.appendChild(typEl);
     msgsEl.scrollTop = msgsEl.scrollHeight;
 
     const delay = 600 + Math.random() * 500;
-    setTimeout(function() {
+    setTimeout(function () {
       if (typEl.parentNode) typEl.remove();
       const reply = getReply(text);
       playMessageReceived();
-      addMsgTyped(reply, function() {
+      addMsgTyped(reply, function () {
         sendBtn.disabled = false;
         if (input) input.focus();
       });
@@ -1052,15 +1055,7 @@
     msgsEl.appendChild(el);
     msgsEl.scrollTop = msgsEl.scrollHeight;
 
-    // Parse html into a temp div to get plain text with structure
-    // We'll type out text node by node, preserving HTML tags
-    const cursor = document.createElement('span');
-    cursor.className = 'smp-cursor';
-
-    // Strategy: reveal characters from innerHTML progressively
     const fullHtml = html;
-    let charIndex = 0;
-    // Strip tags to count visible chars
     const textOnly = fullHtml.replace(/<[^>]*>/g, '');
     const totalChars = textOnly.length;
     let visibleChars = 0;
@@ -1072,15 +1067,12 @@
         if (onDone) onDone();
         return;
       }
-      // Reveal 2-4 chars at a time for speed
       const step = 2 + Math.floor(Math.random() * 3);
       visibleChars = Math.min(visibleChars + step, totalChars);
 
-      // Reconstruct HTML up to visibleChars visible characters
       el.innerHTML = revealHtmlChars(fullHtml, visibleChars) + '<span class="smp-cursor"></span>';
       msgsEl.scrollTop = msgsEl.scrollHeight;
 
-      // Occasional typing sound
       if (Math.random() < 0.35) playTypingClick();
 
       const speed = 18 + Math.random() * 18;
@@ -1097,7 +1089,6 @@
     let i = 0;
     while (i < html.length && visible < count) {
       if (html[i] === '<') {
-        // consume entire tag
         const end = html.indexOf('>', i);
         if (end === -1) { result += html[i++]; } else {
           result += html.slice(i, end + 1);
