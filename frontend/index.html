@@ -10,9 +10,10 @@
 </head>
 <body>
 
-<nav class="site-nav">
+<nav class="site-nav" id="siteNav">
   <div class="container">
     <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="products.html">Products</a>
@@ -20,13 +21,19 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
+
     <form class="nav-search" id="nav-search-form">
       <input type="search" id="nav-search-input" placeholder="Search wholesale products…">
     </form>
+
     <div class="nav-actions">
       <a href="cart.html" class="btn-cart">Cart<span class="cart-count" id="cart-count">0</span></a>
       <span id="nav-auth-slot"></span>
     </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -48,6 +55,10 @@
     </div>
     <div class="hero-visual">
 
+        <button class="hero-play-btn" id="heroPlayBtn" type="button" aria-haspopup="dialog">
+          <span class="play-icon">▶</span> Watch How It Works
+        </button>
+
         <img
             src="images/hero.jpg"
             alt="ZAVQEN Wholesale"
@@ -64,9 +75,26 @@
   </div>
 </header>
 
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="tag">Fabrics</span><span class="dot">•</span>
+    <span>Ready-to-Wear</span><span class="dot">•</span>
+    <span class="tag">Accessories</span><span class="dot">•</span>
+    <span>500+ SKUs</span><span class="dot">•</span>
+    <span class="tag">Live Stock Counts</span><span class="dot">•</span>
+    <span>Flat Unit Pricing</span><span class="dot">•</span>
+    <span class="tag">Fabrics</span><span class="dot">•</span>
+    <span>Ready-to-Wear</span><span class="dot">•</span>
+    <span class="tag">Accessories</span><span class="dot">•</span>
+    <span>500+ SKUs</span><span class="dot">•</span>
+    <span class="tag">Live Stock Counts</span><span class="dot">•</span>
+    <span>Flat Unit Pricing</span><span class="dot">•</span>
+  </div>
+</div>
+
 <section>
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <h2>Shop by Category</h2>
       <a href="products.html">View all →</a>
     </div>
@@ -76,7 +104,7 @@
 
 <section style="background:var(--surface);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <h2>Featured Products</h2>
       <a href="products.html">View all →</a>
     </div>
@@ -84,9 +112,23 @@
   </div>
 </section>
 
+<section class="showcase-banner">
+  <div class="container showcase-inner">
+    <div class="showcase-media reveal">
+      <img src="images/hero.jpg" alt="Inside the ZAVQEN Wholesale stockroom" loading="lazy">
+    </div>
+    <div class="showcase-copy reveal">
+      <span class="eyebrow">Behind The Stock</span>
+      <h2>Every order picked from real, counted inventory.</h2>
+      <p>No dropshipping, no phantom stock. What's listed is what's sitting on our shelves right now — verified daily, so the quantity you order is the quantity that ships.</p>
+      <a href="about.html" class="btn btn-outline">See How It Works</a>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <h2>New Arrivals</h2>
       <a href="products.html?sort=newest">View all →</a>
     </div>
@@ -96,12 +138,12 @@
 
 <section style="border-top:1px solid var(--border-soft)">
   <div class="container">
-    <div class="section-head"><h2>Why Buy From ZAVQEN</h2></div>
+    <div class="section-head reveal"><h2>Why Buy From ZAVQEN</h2></div>
     <div class="features">
-      <div class="feature"><span class="num">01</span><b>Verified Stock</b><p>Inventory counts are live — what you see is what's actually available to ship.</p></div>
-      <div class="feature"><span class="num">02</span><b>Clear MOQs</b><p>Every listing states its minimum order quantity up front. No surprise negotiations.</p></div>
-      <div class="feature"><span class="num">03</span><b>Flat Unit Pricing</b><p>No tiered quote requests — the price you see is the price you pay per unit.</p></div>
-      <div class="feature"><span class="num">04</span><b>Direct From Supplier</b><p>Single-owner sourcing means fewer middlemen and faster answers.</p></div>
+      <div class="feature reveal"><span class="num">01</span><b>Verified Stock</b><p>Inventory counts are live — what you see is what's actually available to ship.</p></div>
+      <div class="feature reveal"><span class="num">02</span><b>Clear MOQs</b><p>Every listing states its minimum order quantity up front. No surprise negotiations.</p></div>
+      <div class="feature reveal"><span class="num">03</span><b>Flat Unit Pricing</b><p>No tiered quote requests — the price you see is the price you pay per unit.</p></div>
+      <div class="feature reveal"><span class="num">04</span><b>Direct From Supplier</b><p>Single-owner sourcing means fewer middlemen and faster answers.</p></div>
     </div>
   </div>
 </section>
@@ -138,9 +180,90 @@
   </div>
 </footer>
 
+<!-- Video modal — triggered by the "Watch How It Works" button on the hero image -->
+<div class="video-modal-overlay" id="videoModalOverlay">
+  <div class="video-modal">
+    <button class="video-modal-close" id="videoModalClose" aria-label="Close video">✕</button>
+    <div class="video-modal-frame">
+      <iframe id="videoModalIframe" src="" title="How ZAVQEN Wholesale Works" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <div class="video-modal-placeholder" id="videoModalPlaceholder">
+        <span class="big">🎬</span>
+        <span>Video coming soon.<br>Set <code>VIDEO_EMBED_URL</code> near the bottom of index.html to activate this player.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/apiClient.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/home.js"></script>
 <script src="js/chatbot.js"></script>
+
+<script>
+  // ---------- Mobile nav toggle ----------
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('siteNav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { nav.classList.remove('is-open'); });
+    });
+  })();
+
+  // ---------- Hero video modal ----------
+  (function () {
+    // Paste a YouTube/Vimeo *embed* URL here to activate the player,
+    // e.g. "https://www.youtube.com/embed/VIDEO_ID". Leave blank to
+    // show the "coming soon" placeholder instead.
+    var VIDEO_EMBED_URL = "";
+
+    var playBtn = document.getElementById('heroPlayBtn');
+    var overlay = document.getElementById('videoModalOverlay');
+    var closeBtn = document.getElementById('videoModalClose');
+    var iframe = document.getElementById('videoModalIframe');
+    var placeholder = document.getElementById('videoModalPlaceholder');
+    if (!playBtn || !overlay) return;
+
+    function openModal() {
+      if (VIDEO_EMBED_URL) {
+        iframe.src = VIDEO_EMBED_URL;
+        iframe.style.display = 'block';
+        placeholder.style.display = 'none';
+      } else {
+        iframe.style.display = 'none';
+        placeholder.style.display = 'flex';
+      }
+      overlay.classList.add('active');
+    }
+    function closeModal() {
+      overlay.classList.remove('active');
+      iframe.src = '';
+    }
+    playBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+  })();
+
+  // ---------- Scroll-reveal for section headers / cards ----------
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || !els.length) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
 </body>
 </html>
