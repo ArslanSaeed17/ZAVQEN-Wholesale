@@ -1,9 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="12" fill="#0E1113"/>
-  <circle cx="32" cy="32" r="25" fill="none" stroke="#B8834A" stroke-width="2.4"
-    stroke-dasharray="141 16" stroke-dashoffset="46" stroke-linecap="round"/>
-  <text x="24.5" y="41" font-family="Georgia, 'Fraunces', serif" font-size="27" font-weight="700"
-    fill="#EDEAE3" text-anchor="middle">Z</text>
-  <text x="39.5" y="41" font-family="Georgia, 'Fraunces', serif" font-size="27" font-weight="700"
-    fill="#B8834A" text-anchor="middle">W</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4D497"/>
+      <stop offset="50%" stop-color="#CB9A4E"/>
+      <stop offset="100%" stop-color="#96692B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- open gold ring, gap at top-right like the reference logo -->
+  <circle cx="100" cy="104" r="84" fill="none" stroke="url(#goldGrad)" stroke-width="7"
+    stroke-linecap="round" stroke-dasharray="484 40" stroke-dashoffset="122" transform="rotate(-10 100 104)"/>
+
+  <!-- black Z -->
+  <path fill="#15171A" d="
+    M 18,48
+    L 98,48
+    L 98,66
+    L 48,144
+    L 100,144
+    L 100,162
+    L 14,162
+    L 14,144
+    L 64,66
+    L 18,66
+    Z"/>
+
+  <!-- gold W (monoline zigzag) -->
+  <path fill="none" stroke="url(#goldGrad)" stroke-width="15" stroke-linejoin="round" stroke-linecap="round" d="
+    M 108,50
+    L 126,140
+    L 144,80
+    L 162,140
+    L 180,50"/>
+
+  <!-- flourish curling beneath, echoing the reference logo's tail -->
+  <path fill="none" stroke="url(#goldGrad)" stroke-width="9" stroke-linecap="round" d="
+    M 126,138
+    C 122,164 100,176 80,166
+    C 66,159 65,142 78,135
+    C 87,130 96,134 96,143"/>
+  <circle cx="96" cy="143" r="5.5" fill="url(#goldGrad)"/>
 </svg>
