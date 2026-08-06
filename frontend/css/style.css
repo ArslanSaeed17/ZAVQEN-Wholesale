@@ -80,8 +80,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; lett
 .site-nav .container { display: flex; align-items: center; gap: 32px; height: 68px; }
 .logo { font-family: var(--font-display); font-size: 21px; font-weight: 600; letter-spacing: 0.02em; }
 .logo span { color: var(--brass-bright); }
-.nav-links { display: flex; gap: 28px; flex: 1; }
-.nav-links a { position: relative; color: var(--ink-dim); font-size: 14px; transition: color .2s var(--ease); padding: 4px 0; }
+.nav-links { display: flex; gap: 22px; flex: 1; min-width: 0; }
+.nav-links a { position: relative; color: var(--ink-dim); font-size: 13.5px; white-space: nowrap; transition: color .2s var(--ease); padding: 4px 0; }
 .nav-links a::after {
   content: ''; position: absolute; left: 0; right: 100%; bottom: -2px; height: 1px;
   background: var(--brass-bright); transition: right .25s var(--ease);
@@ -98,9 +98,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; lett
   width: 100%; outline: none;
 }
 .nav-search input::placeholder { color: var(--ink-faint); }
-.nav-actions { display: flex; align-items: center; gap: 16px; }
-.nav-actions a { font-size: 13px; color: var(--ink-dim); }
+.nav-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.nav-actions a { font-size: 13px; color: var(--ink-dim); white-space: nowrap; }
 .nav-actions a:hover { color: var(--ink); }
+#nav-auth-slot { display: flex; align-items: center; gap: 14px; }
+#nav-auth-slot a { white-space: nowrap; }
 .btn-cart { position: relative; }
 .cart-count {
   position: absolute; top: -8px; right: -12px; background: var(--brass);
