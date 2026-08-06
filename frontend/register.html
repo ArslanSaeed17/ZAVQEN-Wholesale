@@ -7,8 +7,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-
+<body class="page-register">
 <nav class="site-nav">
   <div class="container">
     <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
@@ -17,41 +16,138 @@
   </div>
 </nav>
 
-<div class="auth-shell">
-  <div class="auth-card">
-    <h1>Create your account</h1>
-    <p class="sub">Register as a buyer to place wholesale orders.</p>
-    <div class="form-msg" id="form-msg"></div>
-    <form id="register-form">
-      <div class="field">
-        <label for="full_name">Full name</label>
-        <input type="text" id="full_name" required autocomplete="name">
+<div class="reg-shell">
+
+  <!-- ============ LEFT — Branding panel ============ -->
+  <aside class="reg-aside">
+    <div class="reg-glow reg-glow-a"></div>
+    <div class="reg-glow reg-glow-b"></div>
+
+    <div class="reg-aside-inner">
+      <span class="eyebrow reg-eyebrow">Wholesale Marketplace</span>
+
+      <div class="reg-plaque">
+        <img src="assets/img/zavqen-logo.jpg" alt="ZAVQEN Wholesale" class="reg-plaque-img">
+        <div class="reg-plaque-tag">
+          <span class="swatch-tag">New Account · Lot 001</span>
+        </div>
       </div>
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" required autocomplete="email">
+
+      <h1 class="reg-heading">Source smarter.<br><span class="accent">Trade in bulk.</span></h1>
+      <p class="reg-sub">Join verified buyers sourcing fabrics, apparel and accessories directly from Pakistan's wholesale suppliers — no middlemen, transparent MOQ pricing.</p>
+
+      <ul class="hero-features reg-features">
+        <li>
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          </span>
+          <div>
+            <strong>Verified suppliers only</strong>
+            <small>Every wholesaler on ZAVQEN is manually vetted before listing.</small>
+          </div>
+        </li>
+        <li>
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12l-8.5 8.5L3.5 12 12 3.5z"/><circle cx="12" cy="12" r="2.2"/></svg>
+          </span>
+          <div>
+            <strong>Transparent MOQ pricing</strong>
+            <small>Bulk rates shown up front — no back-and-forth to get a quote.</small>
+          </div>
+        </li>
+        <li>
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7.5" cy="18.5" r="1.6"/><circle cx="17.5" cy="18.5" r="1.6"/></svg>
+          </span>
+          <div>
+            <strong>Nationwide delivery</strong>
+            <small>Orders shipped and tracked to every major city in Pakistan.</small>
+          </div>
+        </li>
+      </ul>
+
+      <div class="hero-footer reg-footer-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+        <span>Secure account · encrypted checkout</span>
       </div>
-      <div class="field">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" required autocomplete="tel">
+    </div>
+  </aside>
+
+  <!-- ============ RIGHT — Registration form ============ -->
+  <div class="reg-panel">
+    <div class="reg-card">
+      <div class="reg-card-icon">Z</div>
+      <h1>Create your account</h1>
+      <p class="sub">It's completely free to register as a wholesale buyer.</p>
+
+      <div class="form-msg" id="form-msg"></div>
+
+      <form id="register-form">
+        <div class="field">
+          <label for="full_name">Full name</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.6-3.6 4.4-5.4 7.5-5.4s5.9 1.8 7.5 5.4"/></svg>
+            <input type="text" id="full_name" required autocomplete="name" placeholder="Your full name">
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+            <input type="email" id="email" required autocomplete="email" placeholder="you@company.com">
+          </div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.5l1.5 4.5-2 1.5a12 12 0 006 6l1.5-2 4.5 1.5V19a2 2 0 01-2.2 2A16 16 0 013 6.2 2 2 0 015 4z"/></svg>
+            <input type="tel" id="phone" required autocomplete="tel" placeholder="03XX XXXXXXX">
+          </div>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            <input type="password" id="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters">
+            <button type="button" class="toggle-pass" data-target="password" aria-label="Show password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="confirm_password">Confirm password</label>
+          <div class="input-wrap">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            <input type="password" id="confirm_password" required minlength="8" autocomplete="new-password" placeholder="Re-enter your password">
+            <button type="button" class="toggle-pass" data-target="confirm_password" aria-label="Show password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="register-btn">Create account</button>
+      </form>
+
+      <div class="auth-links reg-links">
+        <a href="login.html">Have an account? Log in</a>
       </div>
-      <div class="field">
-        <label for="password">Password</label>
-        <input type="password" id="password" required minlength="8" autocomplete="new-password">
-      </div>
-      <div class="field">
-        <label for="confirm_password">Confirm password</label>
-        <input type="password" id="confirm_password" required minlength="8" autocomplete="new-password">
-      </div>
-      <button type="submit" class="btn btn-primary btn-block" id="register-btn">Create account</button>
-    </form>
-    <div class="auth-links">
-      <a href="login.html">Have an account? Log in</a>
     </div>
   </div>
+
 </div>
 
 <script src="js/apiClient.js"></script>
 <script src="js/auth.js"></script>
+<script>
+  // Purely cosmetic — show/hide password, no effect on auth.js logic.
+  document.querySelectorAll('.toggle-pass').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var input = document.getElementById(btn.getAttribute('data-target'));
+      if (!input) return;
+      var isPass = input.type === 'password';
+      input.type = isPass ? 'text' : 'password';
+      btn.classList.toggle('is-visible', isPass);
+    });
+  });
+</script>
 </body>
 </html>
