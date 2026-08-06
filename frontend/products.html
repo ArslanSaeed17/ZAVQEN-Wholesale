@@ -6,9 +6,11 @@
 <title>All Products — ZAVQEN Wholesale</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="css/style.css">
+<!-- Page-scoped premium styling for the listing page only. Does not touch
+     css/style.css, so every other page renders exactly as before. -->
+<link rel="stylesheet" href="css/products.css">
 </head>
 <body>
-
 <nav class="site-nav">
   <div class="container">
     <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
@@ -29,52 +31,155 @@
   </div>
 </nav>
 
+<!-- ===================== Listing hero ===================== -->
+<header class="pf-hero">
+  <div class="pf-hero-glow" aria-hidden="true"></div>
+  <div class="container pf-hero-inner">
+    <nav class="pf-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span class="is-current">Products</span>
+    </nav>
+    <div class="pf-hero-row">
+      <div class="pf-hero-copy">
+        <span class="eyebrow">Full Catalog</span>
+        <h1>Wholesale Product Directory</h1>
+        <p>Verified stock across every category — priced for bulk order, ready for immediate quoting.</p>
+      </div>
+      <button type="button" class="btn btn-outline pf-filter-toggle" id="pf-filter-toggle" aria-expanded="false" aria-controls="pf-sidebar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/><circle cx="6" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="10" cy="18" r="1.6" fill="currentColor" stroke="none"/></svg>
+        Filters
+      </button>
+    </div>
+  </div>
+</header>
+
 <div class="container">
   <div class="listing-layout">
-    <aside>
-      <form id="listing-search-form" class="field" style="margin-bottom:24px">
-        <input type="search" id="listing-search-input" placeholder="Search…">
-      </form>
 
-      <div class="filter-block">
-        <h3>Category</h3>
-        <div id="filter-category">Loading…</div>
-      </div>
+    <div class="pf-overlay" id="pf-overlay"></div>
 
-      <div class="filter-block">
-        <h3>Price</h3>
-        <label class="filter-opt"><input type="radio" name="price" value="0-1000"> Under Rs 1,000</label>
-        <label class="filter-opt"><input type="radio" name="price" value="1000-5000"> Rs 1,000 – 5,000</label>
-        <label class="filter-opt"><input type="radio" name="price" value="5000+"> Rs 5,000+</label>
-        <label class="filter-opt"><input type="radio" name="price" value=""> Any price</label>
-      </div>
+    <aside id="pf-sidebar">
+      <div class="pf-sidebar-inner">
 
-      <div class="filter-block">
-        <h3>Availability</h3>
-        <label class="filter-opt"><input type="radio" name="availability" value="in"> In stock</label>
-        <label class="filter-opt"><input type="radio" name="availability" value="out"> Out of stock</label>
-        <label class="filter-opt"><input type="radio" name="availability" value=""> All</label>
+        <div class="pf-sidebar-head">
+          <span class="eyebrow">Refine results</span>
+          <a href="products.html" class="pf-clear">Clear all</a>
+          <button type="button" class="pf-sidebar-close" id="pf-sidebar-close" aria-label="Close filters">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+          </button>
+        </div>
+
+        <div id="pf-active-chips" class="pf-chips" hidden></div>
+
+        <form id="listing-search-form" class="pf-search-field">
+          <svg class="pf-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="listing-search-input" placeholder="Search products…" aria-label="Search products">
+        </form>
+
+        <div class="filter-block">
+          <h3>
+            <span class="pf-filter-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 12 22l-9-9V4a1 1 0 0 1 1-1h9l8.59 8.59a2 2 0 0 1 0 2.82Z"/><circle cx="7.5" cy="7.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+            Category
+          </h3>
+          <div id="filter-category">Loading…</div>
+        </div>
+
+        <div class="filter-block">
+          <h3>
+            <span class="pf-filter-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg></span>
+            Price
+          </h3>
+          <label class="filter-opt"><input type="radio" name="price" value="0-1000"> Under Rs 1,000</label>
+          <label class="filter-opt"><input type="radio" name="price" value="1000-5000"> Rs 1,000 – 5,000</label>
+          <label class="filter-opt"><input type="radio" name="price" value="5000+"> Rs 5,000+</label>
+          <label class="filter-opt"><input type="radio" name="price" value=""> Any price</label>
+        </div>
+
+        <div class="filter-block">
+          <h3>
+            <span class="pf-filter-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7 12 3 3 7l9 4 9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg></span>
+            Availability
+          </h3>
+          <label class="filter-opt"><input type="radio" name="availability" value="in"> In stock</label>
+          <label class="filter-opt"><input type="radio" name="availability" value="out"> Out of stock</label>
+          <label class="filter-opt"><input type="radio" name="availability" value=""> All</label>
+        </div>
+
       </div>
     </aside>
 
     <main>
       <div class="listing-top">
-        <span class="result-count" id="result-count">Loading…</span>
-        <select id="sort-select">
-          <option value="newest">Newest</option>
-          <option value="price_asc">Price: Low to High</option>
-          <option value="price_desc">Price: High to Low</option>
-          <option value="name_asc">Name: A–Z</option>
-        </select>
+        <span class="result-count" id="result-count" aria-live="polite">Loading…</span>
+        <div class="pf-sort-wrap">
+          <label for="sort-select" class="pf-sort-label">Sort</label>
+          <select id="sort-select">
+            <option value="newest">Newest</option>
+            <option value="price_asc">Price: Low to High</option>
+            <option value="price_desc">Price: High to Low</option>
+            <option value="name_asc">Name: A–Z</option>
+          </select>
+        </div>
       </div>
       <div class="product-grid" id="product-grid"></div>
       <div class="pagination" id="pagination"></div>
     </main>
+
   </div>
 </div>
 
 <footer>
   <div class="container">
+    <div class="footer-grid footer-grid-5">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">ZAVQEN<span>.</span></a>
+        <p>Wholesale sourcing for fabrics, apparel, and accessories — built for buyers who order in bulk.</p>
+        <div class="social-row">
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Chat with us">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="products.html">All Products</a>
+        <a href="products.html">Categories</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+      </div>
+
+      <div class="footer-newsletter">
+        <h4>Stay Stocked</h4>
+        <p>New arrivals and restock alerts, no spam.</p>
+        <form class="newsletter-form" id="footer-newsletter-form">
+          <input type="email" id="footer-newsletter-input" placeholder="you@company.com" aria-label="Email address" required>
+          <button type="submit" aria-label="Subscribe">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+        <p class="newsletter-msg" id="footer-newsletter-msg"></p>
+      </div>
+    </div>
+
     <div class="footer-bottom">
       <span>© 2026 ZAVQEN Wholesale. All rights reserved.</span>
       <span>Lahore, Pakistan</span>
@@ -85,5 +190,88 @@
 <script src="js/apiClient.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/products.js"></script>
+
+<!-- Presentation-only enhancements for this page: mobile filter drawer
+     and "active filter" chips. Purely additive — reads the same URL
+     querystring products.js already uses, never writes to it directly
+     except through plain links, and never touches products.js state. -->
+<script>
+(function () {
+  function paramLabel(key, value) {
+    if (key === "q") return 'Search: "' + value + '"';
+    if (key === "category") return "Category: " + value.replace(/-/g, " ");
+    if (key === "price") {
+      var map = { "0-1000": "Under Rs 1,000", "1000-5000": "Rs 1,000 – 5,000", "5000+": "Rs 5,000+" };
+      return map[value] || ("Price: " + value);
+    }
+    if (key === "availability") return value === "in" ? "In stock" : value === "out" ? "Out of stock" : value;
+    return key + ": " + value;
+  }
+
+  function renderChips() {
+    var box = document.getElementById("pf-active-chips");
+    if (!box) return;
+    var params = new URLSearchParams(window.location.search);
+    var keys = ["q", "category", "price", "availability"];
+    var active = keys.filter(function (k) { return params.get(k); });
+    if (!active.length) { box.hidden = true; box.innerHTML = ""; return; }
+    box.hidden = false;
+    box.innerHTML = active.map(function (k) {
+      var val = params.get(k);
+      var next = new URLSearchParams(params);
+      next.delete(k);
+      next.delete("page");
+      var qs = next.toString();
+      var label = document.createElement("div");
+      label.textContent = paramLabel(k, val);
+      return '<a class="pf-chip" href="products.html' + (qs ? "?" + qs : "") + '">' +
+        label.innerHTML +
+        '<span aria-hidden="true">×</span></a>';
+    }).join("");
+  }
+
+  function setupDrawer() {
+    var toggleBtn = document.getElementById("pf-filter-toggle");
+    var closeBtn = document.getElementById("pf-sidebar-close");
+    var sidebar = document.getElementById("pf-sidebar");
+    var overlay = document.getElementById("pf-overlay");
+    if (!toggleBtn || !sidebar || !overlay) return;
+
+    function open() {
+      sidebar.classList.add("is-open");
+      overlay.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      toggleBtn.setAttribute("aria-expanded", "true");
+    }
+    function close() {
+      sidebar.classList.remove("is-open");
+      overlay.classList.remove("is-open");
+      document.body.style.overflow = "";
+      toggleBtn.setAttribute("aria-expanded", "false");
+    }
+    toggleBtn.addEventListener("click", function () {
+      sidebar.classList.contains("is-open") ? close() : open();
+    });
+    overlay.addEventListener("click", close);
+    if (closeBtn) closeBtn.addEventListener("click", close);
+  }
+
+  function setupNewsletter() {
+    var form = document.getElementById("footer-newsletter-form");
+    var msg = document.getElementById("footer-newsletter-msg");
+    if (!form || !msg) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      msg.textContent = "Thanks — you're on the list.";
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderChips();
+    setupDrawer();
+    setupNewsletter();
+  });
+})();
+</script>
 </body>
 </html>
