@@ -62,6 +62,46 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 body > * { position: relative; z-index: 1; }
+body::after {
+  /* soft twinkling dot field — the "stars" layer, sits behind every page */
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1.4px 1.4px at 8% 18%, rgba(163,103,43,.55) 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 76% 12%, rgba(163,103,43,.4) 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 46% 55%, rgba(60,107,90,.4) 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 24% 78%, rgba(163,103,43,.5) 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 92% 68%, rgba(60,107,90,.35) 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 62% 32%, rgba(163,103,43,.4) 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 14% 92%, rgba(163,103,43,.3) 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 88% 40%, rgba(163,103,43,.35) 50%, transparent 51%);
+  background-repeat: repeat;
+  background-size: 320px 320px;
+  animation: star-twinkle 5s ease-in-out infinite;
+}
+@keyframes star-twinkle { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { body::after { animation: none; opacity: .6; } }
+
+/* medium rotating dot-ring — reusable decorative flourish */
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.dot-ring { position: absolute; z-index: 0; pointer-events: none; border-radius: 50%; }
+.dot-ring::before {
+  content: '';
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 1.5px dashed rgba(163,103,43,.4);
+  animation: spin-slow 16s linear infinite;
+}
+.dot-ring::after {
+  content: '';
+  position: absolute; top: -3px; left: 50%; width: 6px; height: 6px;
+  margin-left: -3px; border-radius: 50%; background: var(--brass);
+  animation: spin-slow 16s linear infinite;
+  transform-origin: 3px calc(50% + 3px);
+}
+@media (prefers-reduced-motion: reduce) { .dot-ring::before, .dot-ring::after { animation: none; } }
+.dot-ring--hero { width: 120px; height: 120px; right: 6%; bottom: 8%; }
+.dot-ring--cta { width: 90px; height: 90px; left: 6%; top: 18%; }
+@media (max-width: 900px) { .dot-ring--hero, .dot-ring--cta { display: none; } }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 button { font-family: inherit; cursor: pointer; }
@@ -919,22 +959,24 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
 /* ---------- Video section ---------- */
 .video-section { border-top: 1px solid var(--border-soft); }
 .video-section-head { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; }
+.section-head--center { flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; }
 .video-sub { color: var(--ink-dim); font-size: 14.5px; max-width: 48ch; margin: 6px auto 0; }
 
-.glow-text {
-  animation: text-glow-pulse 3.2s ease-in-out infinite;
+.glow-text, h1, .section-head h2 {
+  animation: text-glow-pulse 3.6s ease-in-out infinite;
 }
 @keyframes text-glow-pulse {
-  0%, 100% { text-shadow: 0 0 12px rgba(212,175,55,.25), 0 0 2px rgba(212,175,55,.15); }
-  50%      { text-shadow: 0 0 28px rgba(212,175,55,.65), 0 0 8px rgba(212,175,55,.4); }
+  0%, 100% { text-shadow: 0 0 10px rgba(163,103,43,.18), 0 0 2px rgba(163,103,43,.12); }
+  50%      { text-shadow: 0 0 22px rgba(163,103,43,.45), 0 0 6px rgba(163,103,43,.3); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .glow-text { animation: none; text-shadow: 0 0 16px rgba(212,175,55,.35); }
+  .glow-text, h1, .section-head h2 { animation: none; text-shadow: 0 0 12px rgba(163,103,43,.25); }
 }
 .video-frame {
-  position: relative; margin-top: 36px; aspect-ratio: 16/7; max-height: 460px;
-  border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border);
-  box-shadow: var(--shadow-card-hover); cursor: pointer;
+  position: relative; margin-top: 36px; aspect-ratio: 21/9; max-height: 560px;
+  width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);
+  overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  box-shadow: none;
 }
 .video-poster { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 .video-frame:hover .video-poster { transform: scale(1.03); }
