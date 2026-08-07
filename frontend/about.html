@@ -30,26 +30,161 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="content-page">
-    <span class="eyebrow">About ZAVQEN</span>
-    <h1>Bulk sourcing, without the runaround.</h1>
-    <p class="sub">We connect wholesale buyers directly with verified stock — clear MOQs, transparent unit pricing, and no quote-request back-and-forth.</p>
-
-    <div class="about-stats">
-      <div class="hero-stat"><b>1</b><span>Trusted supplier, no middlemen</span></div>
-      <div class="hero-stat"><b>MOQ</b><span>Clearly marked on every listing</span></div>
-      <div class="hero-stat"><b>PKR</b><span>Transparent unit pricing</span></div>
+<section class="about-hero">
+  <div class="dot-ring about-dot-ring" aria-hidden="true"></div>
+  <div class="container about-hero-grid">
+    <div class="about-hero-copy">
+      <span class="eyebrow">About ZAVQEN</span>
+      <h1>Bulk sourcing,<br>without the runaround.</h1>
+      <p class="about-hero-sub">We connect wholesale buyers directly with verified stock — clear MOQs, transparent unit pricing, and no quote-request back-and-forth.</p>
+      <span class="about-hero-rule"></span>
     </div>
 
-    <h2>Who we are</h2>
-    <p>ZAVQEN Wholesale is a single-owner wholesale store built for buyers who order in bulk — boutique owners, retailers, and resellers who need consistent stock without negotiating a fresh quote every time. Everything listed is real, in-stock inventory with a set minimum order quantity and a fixed unit price, so what you see is what you pay.</p>
+    <div class="about-hero-visual" aria-hidden="true">
+      <span class="about-sparkle about-sparkle--1"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></svg></span>
+      <span class="about-sparkle about-sparkle--2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></svg></span>
+      <svg viewBox="0 0 440 380" class="about-crates">
+        <defs>
+          <linearGradient id="crateGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E6C193"/>
+            <stop offset="100%" stop-color="#B8834A"/>
+          </linearGradient>
+          <linearGradient id="crateGradDark" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D9AC78"/>
+            <stop offset="100%" stop-color="#A3672B"/>
+          </linearGradient>
+          <linearGradient id="palletGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C9A06B"/>
+            <stop offset="100%" stop-color="#96692F"/>
+          </linearGradient>
+        </defs>
 
-    <h2>How it works</h2>
-    <p>Browse the catalog, add items to your cart at or above each product's MOQ, and check out with cash on delivery or bank transfer. Every order is validated server-side against live stock before it's confirmed, so there are no surprises after you've placed it.</p>
+        <!-- pallet -->
+        <g opacity=".9">
+          <rect x="40" y="330" width="330" height="14" rx="3" fill="url(#palletGrad)"/>
+          <rect x="40" y="330" width="330" height="4" fill="#E6C193" opacity=".5"/>
+          <rect x="70" y="344" width="16" height="18" fill="#8A6132"/>
+          <rect x="320" y="344" width="16" height="18" fill="#8A6132"/>
+          <rect x="195" y="344" width="16" height="18" fill="#8A6132"/>
+        </g>
 
-    <h2>Why buyers choose us</h2>
-    <p>No account managers to chase, no minimum-order guesswork, and no waiting on a quote email. Just a catalog, clear pricing, and an order history you can track from your dashboard.</p>
+        <!-- back-left crate -->
+        <g>
+          <rect x="55" y="168" width="140" height="150" rx="6" fill="url(#crateGrad)"/>
+          <rect x="55" y="168" width="140" height="150" rx="6" fill="none" stroke="#8A6132" stroke-width="1.5" opacity=".4"/>
+          <rect x="118" y="168" width="14" height="150" fill="#8A6132" opacity=".35"/>
+          <text x="88" y="248" font-family="Fraunces, serif" font-size="15" fill="#5C3B18" opacity=".8">ZAVQEN.</text>
+          <path d="M78 168l10-11h14l10 11" stroke="#5C3B18" stroke-width="1.4" fill="none" opacity=".4" stroke-linecap="round"/>
+        </g>
+
+        <!-- back-right / tallest crate -->
+        <g>
+          <rect x="215" y="100" width="165" height="218" rx="6" fill="url(#crateGradDark)"/>
+          <rect x="215" y="100" width="165" height="218" rx="6" fill="none" stroke="#8A6132" stroke-width="1.5" opacity=".4"/>
+          <rect x="290" y="100" width="15" height="218" fill="#8A6132" opacity=".35"/>
+          <text x="248" y="215" font-family="Fraunces, serif" font-size="16" fill="#4A2E12" opacity=".85">ZAVQEN.</text>
+          <g stroke="#4A2E12" stroke-width="1.4" fill="none" opacity=".5">
+            <rect x="340" y="270" width="24" height="24" rx="3"/>
+            <path d="M346 282h12M352 276v12"/>
+          </g>
+        </g>
+
+        <!-- front crate -->
+        <g>
+          <rect x="95" y="238" width="150" height="100" rx="6" fill="url(#crateGrad)"/>
+          <rect x="95" y="238" width="150" height="100" rx="6" fill="none" stroke="#8A6132" stroke-width="1.5" opacity=".45"/>
+          <rect x="163" y="238" width="14" height="100" fill="#8A6132" opacity=".35"/>
+          <text x="122" y="295" font-family="Fraunces, serif" font-size="14" fill="#5C3B18" opacity=".85">ZAVQEN.</text>
+        </g>
+
+        <!-- verified stock badge -->
+        <g transform="translate(322,255)">
+          <circle r="54" fill="#211A10"/>
+          <circle r="54" fill="none" stroke="url(#crateGrad)" stroke-width="3"/>
+          <circle r="46" fill="none" stroke="#B8834A" stroke-width="1" opacity=".5" stroke-dasharray="2 4"/>
+          <path d="M-16 0l10 10 22-24" stroke="#E6C193" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="0" y="26" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9.5" letter-spacing="1" fill="#E6C193">VERIFIED</text>
+          <text x="0" y="37" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9.5" letter-spacing="1" fill="#E6C193">STOCK</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="about-highlight-card">
+      <div class="about-highlight">
+        <span class="about-highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.3.4 4.5 2.4 4.5 5.8"/></svg></span>
+        <b>1</b>
+        <span>Trusted supplier, <br>no middlemen</span>
+      </div>
+      <div class="about-highlight">
+        <span class="about-highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M9 13.5l2 2 4-4"/></svg></span>
+        <b>MOQ</b>
+        <span>Clearly marked on <br>every listing</span>
+      </div>
+      <div class="about-highlight">
+        <span class="about-highlight-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.59 13.41 11 3.83A2 2 0 0 0 9.57 3H4a1 1 0 0 0-1 1v5.57a2 2 0 0 0 .83 1.43l9.58 9.59a2 2 0 0 0 2.82 0l4.36-4.36a2 2 0 0 0 0-2.82z"/><circle cx="7.5" cy="7.5" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+        <b>PKR</b>
+        <span>Transparent <br>unit pricing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="about-body">
+
+    <div class="about-who">
+      <span class="about-who-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V8.5L12 4l8 4.5V21"/><path d="M9.5 21v-7h5v7"/><path d="M4 21h16"/></svg></span>
+      <div>
+        <h2>Who we are</h2>
+        <p>ZAVQEN Wholesale is a single-owner wholesale store built for buyers who order in bulk — boutique owners, retailers, and resellers who need consistent stock without negotiating a fresh quote every time. Everything listed is real, in-stock inventory with a set minimum order quantity and a fixed unit price, so what you see is what you pay.</p>
+      </div>
+    </div>
+
+    <div class="about-section-head">
+      <span class="about-mini-rule"></span>
+      <h2>How it works</h2>
+    </div>
+
+    <div class="about-steps">
+      <div class="about-step">
+        <span class="about-step-num">1</span>
+        <span class="about-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <b>Browse</b>
+        <span>Explore products with clear MOQs and unit prices.</span>
+      </div>
+      <span class="about-step-connector" aria-hidden="true"></span>
+      <div class="about-step">
+        <span class="about-step-num">2</span>
+        <span class="about-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 6H6"/></svg></span>
+        <b>Add to Cart</b>
+        <span>Add the required quantity to meet the MOQ.</span>
+      </div>
+      <span class="about-step-connector" aria-hidden="true"></span>
+      <div class="about-step">
+        <span class="about-step-num">3</span>
+        <span class="about-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M9 13.5l2 2 4-4"/></svg></span>
+        <b>Checkout</b>
+        <span>Review your order and complete a simple checkout.</span>
+      </div>
+      <span class="about-step-connector" aria-hidden="true"></span>
+      <div class="about-step">
+        <span class="about-step-num">4</span>
+        <span class="about-step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="8" width="12" height="8" rx="1"/><path d="M14 11h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></span>
+        <b>Fast Dispatch</b>
+        <span>We pack and ship your order quickly and safely.</span>
+      </div>
+    </div>
+
+    <div class="about-note">
+      <span class="about-note-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M17 5.5c0-1.9-2.2-3.5-5-3.5s-5 1.6-5 3.5 2.2 3.2 5 3.5c2.8.3 5 1.6 5 3.5s-2.2 3.5-5 3.5-5-1.6-5-3.5"/></svg></span>
+      <div>
+        <h2>Why buyers choose us</h2>
+        <p>No account managers to chase, no minimum-order guesswork, and no waiting on a quote email. Just a catalog, clear pricing, and an order history you can track from your dashboard.</p>
+      </div>
+    </div>
+
   </div>
 </div>
 
