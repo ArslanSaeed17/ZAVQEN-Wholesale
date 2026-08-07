@@ -30,37 +30,113 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="section-head" style="padding-top:40px">
-    <div>
+<section class="contact-hero">
+  <div class="container contact-hero-grid">
+    <div class="contact-hero-copy">
       <span class="eyebrow">Get In Touch</span>
-      <h2>Contact Us</h2>
+      <h1>We're Here to Help</h1>
+      <p class="contact-hero-sub">Have a question or bulk order inquiry? Reach out and we'll get back to you as soon as possible.</p>
+    </div>
+
+    <div class="contact-hero-visual" aria-hidden="true">
+      <span class="about-sparkle about-sparkle--1"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></svg></span>
+      <span class="about-sparkle about-sparkle--2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2 7 7 2-7 2-2 7-2-7-7-2 7-2z"/></svg></span>
+      <svg viewBox="0 0 440 300" class="contact-illustration">
+        <defs>
+          <linearGradient id="boxGrad2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E6C193"/>
+            <stop offset="100%" stop-color="#A3672B"/>
+          </linearGradient>
+        </defs>
+        <!-- world map dots (backdrop) -->
+        <g fill="#211A10" opacity=".08">
+          <circle cx="60" cy="60" r="2"/><circle cx="80" cy="50" r="2"/><circle cx="100" cy="65" r="2"/>
+          <circle cx="70" cy="80" r="2"/><circle cx="95" cy="90" r="2"/><circle cx="120" cy="55" r="2"/>
+          <circle cx="140" cy="75" r="2"/><circle cx="160" cy="60" r="2"/><circle cx="50" cy="95" r="2"/>
+        </g>
+        <!-- box -->
+        <g>
+          <rect x="150" y="120" width="150" height="130" rx="8" fill="url(#boxGrad2)"/>
+          <rect x="150" y="120" width="150" height="130" rx="8" fill="none" stroke="#8A6132" stroke-width="1.5" opacity=".4"/>
+          <rect x="216" y="120" width="14" height="130" fill="#8A6132" opacity=".35"/>
+          <text x="178" y="195" font-family="Fraunces, serif" font-size="15" fill="#5C3B18" opacity=".85">ZAVQEN.</text>
+          <path d="M170 120l10-11h20l10 11" stroke="#5C3B18" stroke-width="1.4" fill="none" opacity=".4" stroke-linecap="round"/>
+        </g>
+        <!-- plant -->
+        <g transform="translate(330,210)">
+          <rect x="-20" y="34" width="40" height="30" rx="6" fill="#E6C193"/>
+          <path d="M0 34 L-8 -2 A16 16 0 0 1 8 -2 Z" fill="#4E8672"/>
+          <path d="M0 34 L-16 8 A20 20 0 0 1 6 -10 Z" fill="#3C6B5A"/>
+          <path d="M0 34 L14 4 A18 18 0 0 1 -4 -12 Z" fill="#5C9C86"/>
+        </g>
+        <!-- headset badge -->
+        <g transform="translate(120,90)">
+          <circle r="46" fill="#211A10"/>
+          <circle r="46" fill="none" stroke="url(#boxGrad2)" stroke-width="3"/>
+          <path d="M-18 4v-6a18 18 0 0 1 36 0v6" stroke="#E6C193" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <rect x="-20" y="2" width="9" height="16" rx="3" fill="#E6C193"/>
+          <rect x="11" y="2" width="9" height="16" rx="3" fill="#E6C193"/>
+          <path d="M20 10v6a6 6 0 0 1-6 6h-3" stroke="#E6C193" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
     </div>
   </div>
+</section>
 
-  <div class="contact-layout">
-    <div>
-      <div class="contact-info-card">
-        <span class="eyebrow">Email</span>
-        <a href="#" data-contact-email>Loading…</a>
+<div class="container">
+  <div class="contact-layout-new">
+    <div class="contact-info-list">
+      <div class="contact-info-card-new">
+        <span class="contact-info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <div class="contact-info-body">
+          <span class="contact-info-label">Email</span>
+          <a href="#" data-contact-email>Loading…</a>
+          <small>We'll respond via email</small>
+        </div>
+        <span class="contact-info-arrow" aria-hidden="true">›</span>
       </div>
-      <div class="contact-info-card">
-        <span class="eyebrow">Phone</span>
-        <a href="#" data-contact-phone>Loading…</a>
+
+      <div class="contact-info-card-new">
+        <span class="contact-info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3h4l1 5-2.7 2.1a12 12 0 0 0 5.6 5.6L16 13.4l5 1v4a2 2 0 0 1-2 2C10.6 20 4 13.4 4 5a2 2 0 0 1 2-2z"/></svg></span>
+        <div class="contact-info-body">
+          <span class="contact-info-label">Phone</span>
+          <a href="#" data-contact-phone>Loading…</a>
+          <small>Mon – Sat: 9:00 AM – 8:00 PM</small>
+        </div>
+        <span class="contact-info-arrow" aria-hidden="true">›</span>
       </div>
-      <div class="contact-info-card">
-        <span class="eyebrow">Address</span>
-        <p data-contact-address>Lahore, Pakistan</p>
+
+      <div class="contact-info-card-new">
+        <span class="contact-info-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-7.6 7-13a7 7 0 1 0-14 0c0 5.4 7 13 7 13z"/><circle cx="12" cy="9" r="2.6"/></svg></span>
+        <div class="contact-info-body">
+          <span class="contact-info-label">Address</span>
+          <p data-contact-address>Lahore, Pakistan</p>
+          <small>Punjab, Pakistan</small>
+        </div>
+        <span class="contact-info-arrow" aria-hidden="true">›</span>
       </div>
-      <div class="contact-info-card">
-        <span class="eyebrow">WhatsApp</span>
-        <p style="margin:0 0 10px">Fastest way to reach us for bulk order questions.</p>
-        <a href="#" data-whatsapp-link target="_blank" rel="noopener" class="whatsapp-btn" style="display:none">Chat on WhatsApp</a>
+
+      <div class="contact-info-card-new contact-info-card-new--whatsapp">
+        <span class="contact-info-icon contact-info-icon--pine" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l1.4-4.2A8 8 0 1 1 9 18.6z"/></svg></span>
+        <div class="contact-info-body">
+          <span class="contact-info-label">WhatsApp</span>
+          <small>Fastest way to reach us for<br>bulk order questions.</small>
+        </div>
+        <a href="#" data-whatsapp-link target="_blank" rel="noopener" class="whatsapp-btn" style="display:none">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="15" height="15"><path d="M4 20l1.4-4.2A8 8 0 1 1 9 18.6z"/></svg>
+          Chat on WhatsApp
+        </a>
       </div>
     </div>
 
-    <div class="checkout-block">
-      <h3>Send a Message</h3>
+    <div class="contact-form-card">
+      <div class="contact-form-card-head">
+        <div>
+          <h3>Send a Message</h3>
+          <p>Fill out the form and our team will get back to you.</p>
+        </div>
+        <svg class="contact-form-deco" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+      </div>
       <div class="form-msg" id="form-msg"></div>
       <form id="contact-form">
         <!-- honeypot: real users never see or fill this; bots that auto-fill every field will -->
@@ -68,12 +144,58 @@
           <label for="cf_company">Company</label>
           <input type="text" id="cf_company" name="company" tabindex="-1" autocomplete="off">
         </div>
-        <div class="field"><label for="cf_name">Name</label><input id="cf_name" type="text" required></div>
-        <div class="field"><label for="cf_email">Email</label><input id="cf_email" type="email" required></div>
-        <div class="field"><label for="cf_subject">Subject</label><input id="cf_subject" type="text" placeholder="Optional"></div>
-        <div class="field"><label for="cf_message">Message</label><textarea id="cf_message" rows="5" required></textarea></div>
-        <button type="submit" class="btn btn-primary btn-block" id="contact-btn">Send Message</button>
+        <div class="contact-field-row">
+          <div class="field field--icon">
+            <label for="cf_name">Name</label>
+            <span class="field-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></span>
+            <input id="cf_name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field field--icon">
+            <label for="cf_email">Email</label>
+            <span class="field-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <input id="cf_email" type="email" placeholder="Your email" required>
+          </div>
+        </div>
+        <div class="field field--icon">
+          <label for="cf_subject">Subject</label>
+          <span class="field-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h13l3 3v13H4z"/><path d="M9 9h6M9 13h6"/></svg></span>
+          <input id="cf_subject" type="text" placeholder="Optional">
+        </div>
+        <div class="field field--icon field--textarea">
+          <label for="cf_message">Message</label>
+          <span class="field-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          <textarea id="cf_message" rows="5" placeholder="Type your message here…" required></textarea>
+        </div>
+        <div class="contact-form-actions">
+          <button type="submit" class="btn btn-primary" id="contact-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+            Send Message
+          </button>
+          <button type="reset" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>
+            Clear
+          </button>
+        </div>
       </form>
+    </div>
+  </div>
+
+  <div class="contact-trust-row">
+    <div class="contact-trust-item">
+      <span class="contact-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3.5 8.3-7 9-3.5-.7-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <div><b>Quick Response</b><span>We reply within 24h</span></div>
+    </div>
+    <div class="contact-trust-item">
+      <span class="contact-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12l4-3 3 2 4-2 3 2 4-3"/><path d="M8 11l3 7 3-7"/></svg></span>
+      <div><b>Trusted Support</b><span>Real people, real help</span></div>
+    </div>
+    <div class="contact-trust-item">
+      <span class="contact-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 3.5"/></svg></span>
+      <div><b>Reliable Service</b><span>Always here for you</span></div>
+    </div>
+    <div class="contact-trust-item">
+      <span class="contact-trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></span>
+      <div><b>Your Data Safe</b><span>100% Confidential</span></div>
     </div>
   </div>
 </div>
