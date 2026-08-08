@@ -1419,6 +1419,16 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
    the MOQ swatch-tag.
    ========================================================= */
 
+/* ---------- Ambient bokeh background (this page only) ---------- */
+body.page-products {
+  background:
+    radial-gradient(ellipse 760px 460px at 88% 64%, rgba(163,103,43,.09), transparent 62%),
+    radial-gradient(ellipse 1200px 600px at 12% 0%, rgba(184,131,74,.10), transparent 60%),
+    radial-gradient(ellipse 900px 500px at 100% 30%, rgba(76,123,110,.08), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
 /* ---------- Listing hero ---------- */
 .page-products .pf-hero {
   position: relative;
@@ -1437,6 +1447,17 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
   background: radial-gradient(circle, rgba(76,123,110,.16), transparent 70%);
   filter: blur(60px);
   pointer-events: none;
+}
+.page-products .pf-hero::before {
+  content: '';
+  position: absolute;
+  width: 340px; height: 340px;
+  top: 40px; left: -140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,131,74,.20), transparent 70%);
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
 }
 .page-products .pf-hero-inner { position: relative; z-index: 1; padding-bottom: 32px; }
 
@@ -1482,10 +1503,12 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
 .page-products .pf-sidebar-inner {
   position: sticky;
   top: 84px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 0 1px 2px rgba(33,26,16,.05), 0 24px 48px -26px rgba(33,26,16,.28);
   padding: 22px 20px 6px;
 }
 
@@ -1574,9 +1597,9 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
   gap: 0;
   padding: 10px 12px 10px 32px;
   margin-bottom: 6px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface-2);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  background: rgba(255,255,255,.4);
   font-size: 13px;
   color: var(--ink-dim);
   line-height: 1.3;
@@ -1606,10 +1629,13 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
 
 /* ---------- Result toolbar ---------- */
 .page-products .listing-top {
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  padding: 12px 18px;
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  box-shadow: 0 1px 2px rgba(33,26,16,.05), 0 16px 36px -22px rgba(33,26,16,.22);
+  padding: 14px 20px;
   margin-bottom: 22px;
 }
 .page-products .result-count {
@@ -1651,7 +1677,26 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
   .page-products .product-grid .product-card { animation: none; }
 }
 
-.page-products .product-card { position: relative; }
+.page-products .product-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(33,26,16,.06), 0 26px 50px -26px rgba(33,26,16,.30);
+}
+.page-products .product-card::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,.45) 0%, rgba(255,255,255,0) 26%);
+}
+.page-products .product-card:hover {
+  border-color: rgba(163,103,43,.4);
+  transform: translateY(-6px);
+  box-shadow: 0 1px 2px rgba(33,26,16,.08), 0 34px 64px -24px rgba(163,103,43,.38);
+}
 .page-products .product-card .p-img-wrap img {
   transition: transform .5s var(--ease);
 }
@@ -1659,13 +1704,21 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
 .page-products .product-card .p-img-wrap::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(9,11,12,.55) 0%, rgba(9,11,12,0) 42%);
+  background: linear-gradient(to top, rgba(9,11,12,.5) 0%, rgba(9,11,12,0) 42%);
   pointer-events: none;
 }
-.page-products .product-card .swatch-tag { position: absolute; left: 10px; bottom: 10px; z-index: 1; }
-.page-products .product-card .p-body { padding: 15px 15px 16px; }
+.page-products .product-card .swatch-tag {
+  position: absolute; left: 10px; bottom: 10px; z-index: 1;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.28);
+}
+.page-products .product-card .p-body { padding: 16px 17px 18px; position: relative; z-index: 1; }
 .page-products .product-card .p-name { font-family: var(--font-body); }
 .page-products .product-card .p-price { font-size: 16px; }
+.page-products .product-card .stock-pill {
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.4);
+}
 .page-products .product-card .p-price-row::after {
   content: 'View →';
   font-family: var(--font-mono);
@@ -1681,9 +1734,10 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
 /* ---------- Empty / error states ---------- */
 .page-products .product-grid .empty-state {
   grid-column: 1 / -1;
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-lg);
-  background: var(--surface);
+  border: 1px dashed var(--glass-border);
+  border-radius: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px) saturate(150%);
   padding: 70px 20px;
 }
 .page-products .product-grid .empty-state::before {
@@ -1699,9 +1753,14 @@ footer { border-top: 1px solid var(--border-soft); padding: 48px 0 28px; margin-
 /* ---------- Pagination ---------- */
 .page-products .pagination { gap: 8px; }
 .page-products .pagination button {
-  transition: border-color .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px) saturate(150%);
+  border: 1px solid var(--glass-border);
+  transition: border-color .2s var(--ease), color .2s var(--ease), transform .2s var(--ease), box-shadow .2s var(--ease);
 }
-.page-products .pagination button:hover { border-color: var(--brass); color: var(--brass-bright); transform: translateY(-1px); }
+.page-products .pagination button:hover { border-color: var(--brass); color: var(--brass-bright); transform: translateY(-1px); box-shadow: 0 8px 20px -10px rgba(163,103,43,.4); }
 .page-products .pagination button.active {
   background: var(--gold-gradient);
   color: #14100A;
