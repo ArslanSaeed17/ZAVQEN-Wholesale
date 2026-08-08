@@ -27,18 +27,74 @@ function setState(patch) {
 
 function productCardHtml(p) {
   const img = p.images && p.images[0] ? p.images[0] : "";
+  const outOfStock = p.stock <= 0;
   return `
-    <a class="product-card" href="product.html?slug=${encodeURIComponent(p.slug)}">
-      <div class="p-img-wrap">
-        ${img ? `<img src="${img}" alt="${escapeHtml(p.name)}" loading="lazy">` : `<div class="skeleton" style="width:100%;height:100%"></div>`}
-        <span class="swatch-tag">MOQ ${p.moq}</span>
+    <div class="product-card" data-product-id="${p.id}" data-moq="${p.moq}" data-stock="${p.stock}">
+      <a class="p-card-link" href="product.html?slug=${encodeURIComponent(p.slug)}">
+        <div class="p-img-wrap">
+          ${img ? `<img src="${img}" alt="${escapeHtml(p.name)}" loading="lazy">` : `<div class="skeleton" style="width:100%;height:100%"></div>`}
+          <span class="swatch-tag">MOQ ${p.moq}</span>
+        </div>
+        <div class="p-body">
+          <div class="p-name">${escapeHtml(p.name)}</div>
+          <div class="p-price-row"><span class="p-price">${formatPKR(p.price)}</span></div>
+          ${stockPill(p.stock)}
+        </div>
+      </a>
+      <div class="p-cta-row">
+        <button type="button" class="btn btn-primary btn-sm add-to-cart-grid-btn" ${outOfStock ? "disabled" : ""}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          ${outOfStock ? "Out of stock" : "Add to Cart"}
+        </button>
       </div>
-      <div class="p-body">
-        <div class="p-name">${escapeHtml(p.name)}</div>
-        <div class="p-price-row"><span class="p-price">${formatPKR(p.price)}</span></div>
-        ${stockPill(p.stock)}
-      </div>
-    </a>`;
+    </div>`;
+}
+
+// Add-to-cart from the grid: same /cart contract product.js already uses,
+// just triggered from a button instead of the product detail page. Uses
+// event delegation on #product-grid so it keeps working after every
+// re-render (loadProducts() replaces grid.innerHTML on each filter/sort/page change).
+function wireGridAddToCart() {
+  const grid = document.getElementById("product-grid");
+  grid.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".add-to-cart-grid-btn");
+    if (!btn || btn.disabled) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const user = await getCurrentUser();
+    if (!user) {
+      window.location.href = `login.html?returnTo=${encodeURIComponent(window.location.pathname + window.location.search)}`;
+      return;
+    }
+
+    const card = btn.closest(".product-card");
+    const productId = card.dataset.productId;
+    const moq = parseInt(card.dataset.moq, 10) || 1;
+    const stock = parseInt(card.dataset.stock, 10) || 0;
+
+    btn.disabled = true;
+    const original = btn.innerHTML;
+    btn.textContent = "Adding…";
+
+    try {
+      // repeated clicks top up quantity rather than replace it, same rule product.js uses
+      const cart = await apiFetch("/cart");
+      const existing = cart.find(c => c.product_id === productId);
+      const qty = existing ? Math.min(existing.quantity + moq, stock) : Math.min(moq, stock);
+      await apiFetch("/cart", { method: "POST", body: { product_id: productId, quantity: qty } });
+      refreshCartBadge();
+      btn.textContent = "Added ✓";
+    } catch (err) {
+      console.error(err);
+      alert(err.message || "Couldn't add to cart. Please try again.");
+      btn.innerHTML = original;
+      btn.disabled = false;
+      return;
+    }
+
+    setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 1200);
+  });
 }
 
 async function loadCategoryFilters(activeSlug) {
@@ -139,4 +195,7 @@ function renderPagination(total, currentPage) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadProducts);
+document.addEventListener("DOMContentLoaded", () => {
+  loadProducts();
+  wireGridAddToCart();
+});
