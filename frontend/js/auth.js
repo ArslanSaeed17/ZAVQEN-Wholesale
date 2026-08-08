@@ -171,18 +171,52 @@ function wireNavSearch() {
 }
 
 // ---------- Footer credit (runs on every page, since auth.js is loaded everywhere) ----------
+function injectFooterCreditStyles() {
+  if (document.getElementById("footer-credit-style")) return;
+  const style = document.createElement("style");
+  style.id = "footer-credit-style";
+  style.textContent = `
+    @keyframes fc-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fc-glow {
+      0%, 100% { color:#E4B57C; text-shadow:0 0 6px rgba(228,181,124,.9),0 0 18px rgba(228,181,124,.55); transform:scale(1); }
+      25%      { color:#C17F2E; text-shadow:0 0 6px rgba(193,127,46,.9),0 0 18px rgba(193,127,46,.55); transform:scale(1.1); }
+      50%      { color:#4E8672; text-shadow:0 0 6px rgba(78,134,114,.9),0 0 18px rgba(78,134,114,.55); transform:scale(1); }
+      75%      { color:#B14330; text-shadow:0 0 6px rgba(177,67,48,.9),0 0 18px rgba(177,67,48,.55); transform:scale(1.1); }
+    }
+    .footer-credit { display:inline-flex; text-decoration:none; }
+    .footer-credit .fc-letter {
+      display:inline-block;
+      font-weight:700;
+      font-size:13px;
+      letter-spacing:.02em;
+      opacity:0;
+      animation: fc-in .3s ease forwards, fc-glow 2.4s ease-in-out infinite;
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 function renderFooterCredit() {
   const bar = document.querySelector(".footer-bottom");
   if (!bar || bar.querySelector(".footer-credit")) return;
+
+  injectFooterCreditStyles();
+
   const credit = document.createElement("a");
   credit.className = "footer-credit";
   credit.href = "https://arslansaeed.live";
   credit.target = "_blank";
   credit.rel = "noopener noreferrer";
-  credit.textContent = "Developed by Arslan Saeed";
-  credit.style.cssText = "color:inherit;text-decoration:none;border-bottom:1px dashed currentColor;opacity:.85;transition:opacity .2s ease,color .2s ease;";
-  credit.addEventListener("mouseenter", () => { credit.style.opacity = "1"; credit.style.color = "var(--brass-bright)"; });
-  credit.addEventListener("mouseleave", () => { credit.style.opacity = ".85"; credit.style.color = "inherit"; });
+
+  const text = "Developed by Arslan Saeed";
+  [...text].forEach((ch, i) => {
+    const span = document.createElement("span");
+    span.className = "fc-letter";
+    span.textContent = ch === " " ? "\u00A0" : ch;
+    span.style.animationDelay = `${i * 45}ms, ${i * 70}ms`;
+    credit.appendChild(span);
+  });
+
   bar.appendChild(credit);
 }
 
