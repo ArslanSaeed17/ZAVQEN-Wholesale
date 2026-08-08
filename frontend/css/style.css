@@ -1679,6 +1679,8 @@ body.page-products {
 
 .page-products .product-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--glass-bg);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
@@ -1686,6 +1688,7 @@ body.page-products {
   border-radius: 20px;
   box-shadow: 0 1px 2px rgba(33,26,16,.06), 0 26px 50px -26px rgba(33,26,16,.30);
 }
+.page-products .p-card-link { display: block; }
 .page-products .product-card::before {
   content: '';
   position: absolute; inset: 0; z-index: 2; pointer-events: none;
@@ -1730,6 +1733,29 @@ body.page-products {
   transition: opacity .2s var(--ease), transform .2s var(--ease);
 }
 .page-products .product-card:hover .p-price-row::after { opacity: 1; transform: translateX(0); }
+
+/* ---------- Grid Add to Cart button ---------- */
+.page-products .p-cta-row {
+  margin-top: auto;
+  padding: 0 17px 17px;
+  position: relative;
+  z-index: 1;
+}
+.page-products .add-to-cart-grid-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 10px;
+}
+.page-products .add-to-cart-grid-btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  filter: none;
+  transform: none;
+  box-shadow: none;
+}
 
 /* ---------- Empty / error states ---------- */
 .page-products .product-grid .empty-state {
@@ -1856,6 +1882,8 @@ body.page-products {
   .page-products .product-card .p-body { padding: 10px 10px 12px; }
   .page-products .product-card .p-name { font-size: 12.5px; min-height: 30px; }
   .page-products .product-card .p-price { font-size: 14px; }
+  .page-products .p-cta-row { padding: 0 10px 12px; }
+  .page-products .add-to-cart-grid-btn { font-size: 11.5px; padding: 7px 8px; }
 }
 
 /* =========================================================
