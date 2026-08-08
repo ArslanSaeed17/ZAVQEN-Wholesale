@@ -170,8 +170,25 @@ function wireNavSearch() {
   });
 }
 
+// ---------- Footer credit (runs on every page, since auth.js is loaded everywhere) ----------
+function renderFooterCredit() {
+  const bar = document.querySelector(".footer-bottom");
+  if (!bar || bar.querySelector(".footer-credit")) return;
+  const credit = document.createElement("a");
+  credit.className = "footer-credit";
+  credit.href = "https://arslansaeed.live";
+  credit.target = "_blank";
+  credit.rel = "noopener noreferrer";
+  credit.textContent = "Developed by Arslan Saeed";
+  credit.style.cssText = "color:inherit;text-decoration:none;border-bottom:1px dashed currentColor;opacity:.85;transition:opacity .2s ease,color .2s ease;";
+  credit.addEventListener("mouseenter", () => { credit.style.opacity = "1"; credit.style.color = "var(--brass-bright)"; });
+  credit.addEventListener("mouseleave", () => { credit.style.opacity = ".85"; credit.style.color = "inherit"; });
+  bar.appendChild(credit);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderNavAuthSlot();
   refreshCartBadge();
   wireNavSearch();
+  renderFooterCredit();
 });
