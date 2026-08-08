@@ -183,7 +183,7 @@ function injectFooterCreditStyles() {
       50%      { color:#4E8672; text-shadow:0 0 6px rgba(78,134,114,.9),0 0 18px rgba(78,134,114,.55); transform:scale(1); }
       75%      { color:#B14330; text-shadow:0 0 6px rgba(177,67,48,.9),0 0 18px rgba(177,67,48,.55); transform:scale(1.1); }
     }
-    .footer-credit { display:inline-flex; text-decoration:none; }
+    .footer-credit { display:inline-flex; align-items:center; gap:4px; text-decoration:none; }
     .footer-credit .fc-letter {
       display:inline-block;
       font-weight:700;
@@ -192,6 +192,7 @@ function injectFooterCreditStyles() {
       opacity:0;
       animation: fc-in .3s ease forwards, fc-glow 2.4s ease-in-out infinite;
     }
+    .footer-credit .fc-icon { display:inline-flex; margin-left:2px; }
   `;
   document.head.appendChild(style);
 }
@@ -201,6 +202,10 @@ function renderFooterCredit() {
   if (!bar || bar.querySelector(".footer-credit")) return;
 
   injectFooterCreditStyles();
+
+  // Original markup is [copyright span, "Lahore, Pakistan" span]. We reorder
+  // so the glowing credit sits in the middle and the location moves to the end.
+  const locationSpan = bar.children[1] || null;
 
   const credit = document.createElement("a");
   credit.className = "footer-credit";
@@ -217,7 +222,18 @@ function renderFooterCredit() {
     credit.appendChild(span);
   });
 
-  bar.appendChild(credit);
+  const icon = document.createElement("span");
+  icon.className = "fc-letter fc-icon";
+  icon.style.animationDelay = `${text.length * 45}ms, ${text.length * 70}ms`;
+  icon.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>`;
+  credit.appendChild(icon);
+
+  if (locationSpan) {
+    bar.insertBefore(credit, locationSpan);
+    bar.appendChild(locationSpan); // moves it (not a copy) to the end
+  } else {
+    bar.appendChild(credit);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
